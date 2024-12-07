@@ -1,3 +1,2 @@
-# my-website
+# my website/portfolio thing
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/nonxistnt/my-website)
