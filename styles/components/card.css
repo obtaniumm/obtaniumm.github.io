@@ -1,0 +1,127 @@
+.card {
+  background: var(--color-surface);
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-theme);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  animation: glow 3s infinite;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-1),
+    var(--color-accent-2),
+    var(--color-accent-3)
+  );
+  background-size: 200% auto;
+  animation: gradientMove 3s ease infinite;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(var(--color-accent-2-rgb), 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card h3 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: var(--transition-theme);
+}
+
+.card:hover h3 {
+  background: linear-gradient(
+    45deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 3s ease infinite;
+}
+
+.card p {
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  transition: var(--transition-theme);
+}
+
+/* New Feature Card Styles */
+.feature-highlight {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-accent-1-rgb), 0.1),
+    rgba(var(--color-accent-2-rgb), 0.1)
+  );
+  border: 2px solid transparent;
+  background-size: 400% 400%;
+  animation: gradientMove 6s ease infinite;
+}
+
+.feature-highlight:hover {
+  border-color: var(--color-accent-2);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.feature-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(
+    45deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
+  color: var(--color-surface);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transform: rotate(3deg);
+  animation: float 3s ease-in-out infinite;
+}
+
+.feature-highlight::before {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-2),
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
+}

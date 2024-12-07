@@ -1,0 +1,41 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-background);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    var(--color-background) 70%
+  );
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  background: linear-gradient(
+    45deg,
+    var(--color-accent-1),
+    var(--color-accent-2),
+    var(--color-accent-3)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 6s ease infinite;
+}

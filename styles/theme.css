@@ -1,0 +1,62 @@
+/* Light theme variables */
+:root[data-theme='light'] {
+  --color-primary: #2563eb;
+  --color-primary-dark: #0931a1;
+  --color-accent-1: #f32791;
+  --color-accent-2: #1e33f1;
+  --color-accent-3: #1fda95;
+  --color-accent-1-rgb: 244, 114, 182;
+  --color-accent-2-rgb: 129, 140, 248;
+  --color-accent-3-rgb: 52, 211, 153;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-text-light: #29303a;
+  --color-border: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --gradient-background: linear-gradient(
+    45deg,
+    rgba(244, 114, 182, 0.05),
+    rgba(129, 140, 248, 0.05),
+    rgba(52, 211, 153, 0.05)
+  );
+}
+
+/* Dark theme variables */
+:root[data-theme='dark'] {
+  --color-primary: #2ca6ec;
+  --color-primary-dark: #2563eb;
+  --color-accent-1: #ff53a9;
+  --color-accent-2: #565cff;
+  --color-accent-3: #65ffce;
+  --color-accent-1-rgb: 236, 72, 153;
+  --color-accent-2-rgb: 99, 102, 241;
+  --color-accent-3-rgb: 16, 185, 129;
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-light: #94a3b8;
+  --color-border: #334155;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --gradient-background: linear-gradient(
+    45deg,
+    rgba(236, 72, 153, 0.1),
+    rgba(99, 102, 241, 0.1),
+    rgba(16, 185, 129, 0.1)
+  );
+}
+
+/* Shared variables */
+:root {
+  --max-width: 1200px;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --transition-theme: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme transition styles */
+body {
+  transition: var(--transition-theme);
+}
