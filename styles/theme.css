@@ -25,8 +25,8 @@
 
 /* Dark theme variables */
 :root[data-theme='dark'] {
-  --color-primary: #2ca6ec;
-  --color-primary-dark: #2563eb;
+  --color-primary: #50bffe;
+  --color-primary-dark: #244ea9;
   --color-accent-1: #ff53a9;
   --color-accent-2: #565cff;
   --color-accent-3: #65ffce;
