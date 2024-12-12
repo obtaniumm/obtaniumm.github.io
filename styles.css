@@ -36,3 +36,7 @@ body {
   transform: translateY(-2px);
   background-position: right center;
 }
+
+a {
+  color: inherit;
+}
