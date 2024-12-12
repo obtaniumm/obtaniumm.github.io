@@ -17,9 +17,9 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --gradient-background: linear-gradient(
     45deg,
-    rgba(244, 114, 182, 0.05),
-    rgba(129, 140, 248, 0.05),
-    rgba(52, 211, 153, 0.05)
+    rgba(255, 81, 171, 0.135),
+    rgba(84, 101, 255, 0.13),
+    rgba(63, 255, 185, 0.146)
   );
 }
 
