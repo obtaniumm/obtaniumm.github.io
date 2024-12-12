@@ -81,6 +81,11 @@
   transition: var(--transition-theme);
 }
 
+.card h2 {
+  color: inherit;
+  text-decoration: none;
+}
+
 .feature-highlight {
   background: linear-gradient(
     135deg,

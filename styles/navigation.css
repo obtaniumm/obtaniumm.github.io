@@ -17,25 +17,6 @@
   align-items: center;
 }
 
-.logo h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(
-    45deg,
-    var(--color-accent-1),
-    var(--color-accent-2)
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: var(--transition-theme);
-}
-
-.logo h2:hover {
-  animation: textGradient 3s ease infinite;
-}
-
 .nav-links {
   display: flex;
   gap: 2.5rem;
