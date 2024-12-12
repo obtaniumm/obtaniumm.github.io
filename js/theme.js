@@ -5,11 +5,9 @@ export function initializeTheme() {
     '(prefers-color-scheme: dark)'
   ).matches;
 
-  // Set initial theme
   const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
   setTheme(initialTheme);
 
-  // Listen for system theme changes
   window
     .matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', (e) => {
