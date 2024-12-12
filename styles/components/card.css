@@ -81,7 +81,6 @@
   transition: var(--transition-theme);
 }
 
-/* New Feature Card Styles */
 .feature-highlight {
   background: linear-gradient(
     135deg,
