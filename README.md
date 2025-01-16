@@ -1,3 +1,3 @@
 # my website/portfolio thing
 
-made with stakblitz
+made with stackblitz
