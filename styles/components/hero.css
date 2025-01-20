@@ -26,6 +26,14 @@
   z-index: 2;
 }
 
+.hero p {
+  background: linear-gradient(
+    45deg,
+    var(--color-accent-1),
+    var(--color-accent-2),
+    var(--color-accent-3)
+  );
+  
 .hero h1 {
   background: linear-gradient(
     45deg,
