@@ -20,7 +20,6 @@
 
 .hero p {
   font-size: 1.25rem;
-  color: var(--color-text-light);
   max-width: 600px;
   margin: 0 auto 2.5rem;
 }
