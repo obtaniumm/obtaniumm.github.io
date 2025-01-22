@@ -42,9 +42,9 @@
 .hero p {
   background: linear-gradient(
     45deg,
-    var(--color-accent-1),
-    var(--color-accent-2),
-    var(--color-accent-3)
+    var(--color-accent-4),
+    var(--color-accent-5),
+    var(--color-accent-6)
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
