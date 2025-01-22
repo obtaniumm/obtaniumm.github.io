@@ -42,7 +42,7 @@
   --color-accent-4-rgb: 0, 38, 207;
   --color-accent-5-rgb: 112, 25, 209;
   --color-accent-6-rgb: 23, 199, 217;
-  --color-background: #0f172a;
+  --color-background: rgb(4, 7, 16);
   --color-surface: #1e293b;
   --color-text: #ffffff;
   --color-text-light: #94a3b8;
