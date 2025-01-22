@@ -11,9 +11,6 @@
   --color-accent-1-rgb: 244, 114, 182;
   --color-accent-2-rgb: 129, 140, 248;
   --color-accent-3-rgb: 52, 211, 153;
-  --color-accent-4-rgb: 0, 38, 207;
-  --color-accent-5-rgb: 112, 25, 209;
-  --color-accent-6-rgb: 23, 199, 217;
   --color-background: #f8fafc;
   --color-surface: #ffffff;
   --color-text: #000000;
@@ -36,9 +33,15 @@
   --color-accent-1: #ff53a9;
   --color-accent-2: #565cff;
   --color-accent-3: #65ffce;
+  --color-accent-4: #0026cf;
+  --color-accent-5: #7019d1;
+  --color-accent-6: #17c7d9;
   --color-accent-1-rgb: 236, 72, 153;
   --color-accent-2-rgb: 99, 102, 241;
   --color-accent-3-rgb: 16, 185, 129;
+  --color-accent-4-rgb: 0, 38, 207;
+  --color-accent-5-rgb: 112, 25, 209;
+  --color-accent-6-rgb: 23, 199, 217;
   --color-background: #0f172a;
   --color-surface: #1e293b;
   --color-text: #ffffff;
