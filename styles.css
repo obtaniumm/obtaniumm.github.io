@@ -1,11 +1,9 @@
 @import 'styles/reset.css';
 @import 'styles/theme.css';
-@import 'styles/animations.css';
 @import 'styles/layout.css';
 @import 'styles/navigation.css';
 @import 'styles/components/theme-switcher.css';
 @import 'styles/components/card.css';
-@import 'styles/components/button.css';
 @import 'styles/components/hero.css';
 
 body {
@@ -19,22 +17,6 @@ body {
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(8px);
   background: rgba(var(--color-surface), 0.8);
-}
-
-.btn {
-  background: linear-gradient(
-    45deg,
-    var(--color-accent-2),
-    var(--color-accent-1)
-  );
-  background-size: 200% auto;
-  animation: gradientMove 3s ease infinite;
-  transition: transform 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  background-position: right center;
 }
 
 a {

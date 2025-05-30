@@ -3,7 +3,6 @@
   overflow: hidden;
   background: var(--gradient-background);
   background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
 }
 
 .hero::before {
@@ -13,11 +12,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 0%,
-    var(--color-background) 70%
-  );
+  background: radial-gradient(circle at center, transparent 0%, var(--color-background) 70%);
   z-index: 1;
 }
 
@@ -27,28 +22,17 @@
 }
 
 .hero h1 {
-  background: linear-gradient(
-    45deg,
-    var(--color-accent-1),
-    var(--color-accent-2),
-    var(--color-accent-3)
-  );
+  background: linear-gradient(45deg, var(--color-accent-1), var(--color-accent-2), var(--color-accent-3));
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGradient 6s ease infinite;
 }
+
 .hero p {
-  background: linear-gradient(
-    45deg,
-    var(--color-accent-4),
-    var(--color-accent-5),
-    var(--color-accent-6)
-  );
+  background: linear-gradient(45deg, var(--color-accent-1), var(--color-accent-2), var(--color-accent-3));
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGradient 6s ease infinite;
 }

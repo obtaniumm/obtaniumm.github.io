@@ -1,7 +1,5 @@
-/* Light theme variables */
 :root[data-theme='light'] {
   --color-primary: #ff0000;
-  --color-primary-dark: #cc0000;
   --color-accent-1: #ff0000;
   --color-accent-2: #000000;
   --color-accent-3: #ff3333;
@@ -12,17 +10,11 @@
   --color-border: #e5e5e5;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --gradient-background: linear-gradient(
-    45deg,
-    rgba(255, 0, 0, 0.05),
-    rgba(0, 0, 0, 0.05)
-  );
+  --gradient-background: linear-gradient(45deg, rgba(255, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
 }
 
-/* Dark theme variables */
 :root[data-theme='dark'] {
   --color-primary: #ff0000;
-  --color-primary-dark: #cc0000;
   --color-accent-1: #ff0000;
   --color-accent-2: #ffffff;
   --color-accent-3: #ff3333;
@@ -33,14 +25,9 @@
   --color-border: #333333;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  --gradient-background: linear-gradient(
-    45deg,
-    rgba(255, 0, 0, 0.1),
-    rgba(255, 255, 255, 0.1)
-  );
+  --gradient-background: linear-gradient(45deg, rgba(255, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
 }
 
-/* Shared variables */
 :root {
   --max-width: 1200px;
   --font-sans: 'General Sans', system-ui, -apple-system, sans-serif;
