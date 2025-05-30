@@ -1,51 +1,21 @@
 .theme-switcher {
-  background: var(--color-surface);
+  background: transparent;
   border: 1px solid var(--color-border);
-  border-radius: 9999px;
-  padding: 0.75rem;
-  margin-left: 1.5rem;
+  padding: 0.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition-theme);
-  position: sticky;
-  overflow: hidden;
 }
 
 .theme-switcher:hover {
-  transform: scale(1.1) rotate(15deg);
-  border-color: var(--color-accent-2);
-  animation: glow 3s infinite;
-}
-
-.theme-switcher::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(var(--color-accent-2-rgb), 0.2),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.theme-switcher:hover::after {
-  opacity: 1;
+  border-color: var(--color-accent-1);
 }
 
 .theme-switcher svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   color: var(--color-text);
   transition: var(--transition-theme);
-}
-
-.theme-switcher:hover svg {
-  animation: scaleIn 0.3s ease;
 }
