@@ -14,6 +14,16 @@ export function initializeTheme() {
 export function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  // Add switching animation
+  const themeSwitcher = document.querySelector('.theme-switcher');
+  if (themeSwitcher) {
+    themeSwitcher.classList.add('switching');
+    setTimeout(() => {
+      themeSwitcher.classList.remove('switching');
+    }, 600);
+  }
+  
   setTheme(newTheme);
   localStorage.setItem('theme', newTheme);
 }

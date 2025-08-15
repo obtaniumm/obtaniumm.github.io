@@ -12,11 +12,11 @@
     <script type="module" src="script.js"></script>
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar animate-navbar">
       <div class="container nav-content">
-        <div class="logo">:3</div>
+        <div class="logo hover-wiggle">:3</div>
         <div class="nav-links">
-          <button class="theme-switcher" aria-label="Toggle theme">
+          <button class="theme-switcher hover-breathe" aria-label="Toggle theme">
             <svg viewBox="0 0 24 24" width="24" height="24">
               <path
                 fill="currentColor"
@@ -28,29 +28,35 @@
       </div>
     </nav>
     <header class="hero animate-fade-in">
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
       <div class="container">
         <div class="hero-content">
-          <h1>obtanium</h1>
+          <h1 class="animate-hero-text">obtanium</h1>
           <div class="hero-details">
-            <p>operating system enthusiast</p>
-            <p>gd and osu!mania player</p>
-            <p>i use arch btw</p>
-            <p>come check out my projects 👇</p>
+            <p class="animate-stagger-1">operating system enthusiast</p>
+            <p class="animate-stagger-2">gd and osu!mania player</p>
+            <p class="animate-stagger-3">i use arch btw</p>
+            <p class="animate-stagger-4">come check out my projects 👇</p>
           </div>
         </div>
       </div>
     </header>
     <main class="content animate-slide-in-up">
+      <div class="floating-decoration"></div>
+      <div class="floating-decoration"></div>
+      <div class="floating-decoration"></div>
       <div class="container">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-          <div class="card animate-scale-in">
+          <div class="card animate-elastic-in card-variant-1 floating hover-float">
             <span class="card-tag">Current</span>
             <h3>This Website</h3>
             <p>With the help of bolt.new and StackBlitz, I made this website!</p>
           </div>
           <a href="https://modrinth.com/modpack/kpack-189" class="card-link">
-            <div class="card animate-scale-in">
+            <div class="card animate-slide-bounce card-variant-2 floating hover-float">
               <span class="card-tag">Featured</span>
               <h3>KPack 1.8.9</h3>
               <p>A Minecraft 1.8.9 modpack that gives you optimization and QoL in a single modpack.</p>
