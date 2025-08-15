@@ -1,35 +1,185 @@
 :root[data-theme='light'] {
-  --color-primary: #ff0000;
-  --color-accent-1: #ff0000;
-  --color-accent-2: #000000;
-  --color-accent-3: #ff3333;
-  --color-background: #ffffff;
-  --color-surface: #ffffff;
-  --color-text: #000000;
-  --color-text-light: #666666;
-  --color-border: #e5e5e5;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --gradient-background: linear-gradient(45deg, rgba(255, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+  /* Material Design 3 Color Tokens - Light */
+  --md-sys-color-primary: #6750a4;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #eaddff;
+  --md-sys-color-on-primary-container: #21005d;
+  
+  --md-sys-color-secondary: #625b71;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #e8def8;
+  --md-sys-color-on-secondary-container: #1d192b;
+  
+  --md-sys-color-tertiary: #7d5260;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #ffd8e4;
+  --md-sys-color-on-tertiary-container: #31111d;
+  
+  --md-sys-color-surface: #fffbfe;
+  --md-sys-color-on-surface: #1c1b1f;
+  --md-sys-color-surface-variant: #e7e0ec;
+  --md-sys-color-on-surface-variant: #49454f;
+  --md-sys-color-surface-container: #f3edf7;
+  --md-sys-color-surface-container-high: #ece6f0;
+  --md-sys-color-surface-container-highest: #e6e0e9;
+  
+  --md-sys-color-background: #fffbfe;
+  --md-sys-color-on-background: #1c1b1f;
+  
+  --md-sys-color-outline: #79747e;
+  --md-sys-color-outline-variant: #cac4d0;
+  
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  
+  /* Legacy mappings */
+  --color-primary: var(--md-sys-color-primary);
+  --color-accent-1: var(--md-sys-color-primary);
+  --color-accent-2: var(--md-sys-color-secondary);
+  --color-accent-3: var(--md-sys-color-tertiary);
+  --color-background: var(--md-sys-color-background);
+  --color-surface: var(--md-sys-color-surface);
+  --color-text: var(--md-sys-color-on-surface);
+  --color-text-light: var(--md-sys-color-on-surface-variant);
+  --color-border: var(--md-sys-color-outline-variant);
 }
 
 :root[data-theme='dark'] {
-  --color-primary: #ff0000;
-  --color-accent-1: #ff0000;
-  --color-accent-2: #ffffff;
-  --color-accent-3: #ff3333;
-  --color-background: #000000;
-  --color-surface: #111111;
-  --color-text: #ffffff;
-  --color-text-light: #999999;
-  --color-border: #333333;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  --gradient-background: linear-gradient(45deg, rgba(255, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+  /* Material Design 3 Color Tokens - Dark */
+  --md-sys-color-primary: #d0bcff;
+  --md-sys-color-on-primary: #381e72;
+  --md-sys-color-primary-container: #4f378b;
+  --md-sys-color-on-primary-container: #eaddff;
+  
+  --md-sys-color-secondary: #ccc2dc;
+  --md-sys-color-on-secondary: #332d41;
+  --md-sys-color-secondary-container: #4a4458;
+  --md-sys-color-on-secondary-container: #e8def8;
+  
+  --md-sys-color-tertiary: #efb8c8;
+  --md-sys-color-on-tertiary: #492532;
+  --md-sys-color-tertiary-container: #633b48;
+  --md-sys-color-on-tertiary-container: #ffd8e4;
+  
+  --md-sys-color-surface: #10131c;
+  --md-sys-color-on-surface: #e6e1e5;
+  --md-sys-color-surface-variant: #49454f;
+  --md-sys-color-on-surface-variant: #cac4d0;
+  --md-sys-color-surface-container: #1d1b20;
+  --md-sys-color-surface-container-high: #272529;
+  --md-sys-color-surface-container-highest: #322f35;
+  
+  --md-sys-color-background: #10131c;
+  --md-sys-color-on-background: #e6e1e5;
+  
+  --md-sys-color-outline: #938f99;
+  --md-sys-color-outline-variant: #49454f;
+  
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  
+  /* Legacy mappings */
+  --color-primary: var(--md-sys-color-primary);
+  --color-accent-1: var(--md-sys-color-primary);
+  --color-accent-2: var(--md-sys-color-secondary);
+  --color-accent-3: var(--md-sys-color-tertiary);
+  --color-background: var(--md-sys-color-background);
+  --color-surface: var(--md-sys-color-surface);
+  --color-text: var(--md-sys-color-on-surface);
+  --color-text-light: var(--md-sys-color-on-surface-variant);
+  --color-border: var(--md-sys-color-outline-variant);
 }
 
 :root {
+  /* Material Design 3 Typography Scale */
+  --md-sys-typescale-display-large-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-display-large-size: 3.5rem;
+  --md-sys-typescale-display-large-weight: 400;
+  --md-sys-typescale-display-large-line-height: 4rem;
+  --md-sys-typescale-display-large-tracking: -0.025em;
+  
+  --md-sys-typescale-display-medium-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-display-medium-size: 2.8125rem;
+  --md-sys-typescale-display-medium-weight: 400;
+  --md-sys-typescale-display-medium-line-height: 3.25rem;
+  --md-sys-typescale-display-medium-tracking: 0;
+  
+  --md-sys-typescale-headline-large-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-headline-large-size: 2rem;
+  --md-sys-typescale-headline-large-weight: 400;
+  --md-sys-typescale-headline-large-line-height: 2.5rem;
+  --md-sys-typescale-headline-large-tracking: 0;
+  
+  --md-sys-typescale-headline-medium-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-headline-medium-size: 1.75rem;
+  --md-sys-typescale-headline-medium-weight: 400;
+  --md-sys-typescale-headline-medium-line-height: 2.25rem;
+  --md-sys-typescale-headline-medium-tracking: 0;
+  
+  --md-sys-typescale-title-large-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-title-large-size: 1.375rem;
+  --md-sys-typescale-title-large-weight: 400;
+  --md-sys-typescale-title-large-line-height: 1.75rem;
+  --md-sys-typescale-title-large-tracking: 0;
+  
+  --md-sys-typescale-body-large-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-body-large-size: 1rem;
+  --md-sys-typescale-body-large-weight: 400;
+  --md-sys-typescale-body-large-line-height: 1.5rem;
+  --md-sys-typescale-body-large-tracking: 0.03125em;
+  
+  --md-sys-typescale-body-medium-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-body-medium-size: 0.875rem;
+  --md-sys-typescale-body-medium-weight: 400;
+  --md-sys-typescale-body-medium-line-height: 1.25rem;
+  --md-sys-typescale-body-medium-tracking: 0.015625em;
+  
+  --md-sys-typescale-label-large-font: 'General Sans', system-ui, sans-serif;
+  --md-sys-typescale-label-large-size: 0.875rem;
+  --md-sys-typescale-label-large-weight: 500;
+  --md-sys-typescale-label-large-line-height: 1.25rem;
+  --md-sys-typescale-label-large-tracking: 0.00625em;
+  
+  /* Material Design 3 Elevation */
+  --md-sys-elevation-level0: none;
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+  
+  /* Material Design 3 Shape */
+  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  
+  /* Material Design 3 Motion */
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-duration-short1: 50ms;
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short3: 150ms;
+  --md-sys-motion-duration-short4: 200ms;
+  --md-sys-motion-duration-medium1: 250ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-medium3: 350ms;
+  --md-sys-motion-duration-medium4: 400ms;
+  --md-sys-motion-duration-long1: 450ms;
+  --md-sys-motion-duration-long2: 500ms;
+  --md-sys-motion-duration-long3: 550ms;
+  --md-sys-motion-duration-long4: 600ms;
+  
+  /* Legacy variables */
   --max-width: 1200px;
-  --font-sans: 'General Sans', system-ui, -apple-system, sans-serif;
-  --transition-theme: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-sans: var(--md-sys-typescale-body-large-font);
+  --transition-theme: all var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+  
+  /* Material Design 3 State Layers */
+  --md-sys-state-hover-opacity: 0.08;
+  --md-sys-state-focus-opacity: 0.12;
+  --md-sys-state-pressed-opacity: 0.12;
+  --md-sys-state-dragged-opacity: 0.16;
 }

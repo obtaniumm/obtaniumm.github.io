@@ -1,25 +1,53 @@
 @import 'styles/reset.css';
 @import 'styles/theme.css';
+@import 'styles/animations.css';
 @import 'styles/layout.css';
 @import 'styles/navigation.css';
 @import 'styles/components/theme-switcher.css';
 @import 'styles/components/card.css';
 @import 'styles/components/hero.css';
+@import 'styles/components/button.css';
 
 body {
-  font-family: var(--font-sans);
-  color: var(--color-text);
-  background-color: var(--color-background);
+  font-family: var(--md-sys-typescale-body-large-font);
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
+  transition: var(--transition-theme);
 }
 
-.navbar {
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: blur(8px);
-  background: rgba(var(--color-surface), 0.8);
+/* Focus management for accessibility */
+:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+  border-radius: var(--md-sys-shape-corner-small);
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: var(--transition-theme);
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-sys-color-surface-variant);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-primary);
 }

@@ -1,18 +1,22 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--gradient-background);
-  background-size: 400% 400%;
+  background: var(--md-sys-color-background);
 }
 
-.hero::before {
+.hero::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, var(--color-background) 70%);
+  background: linear-gradient(
+    135deg,
+    rgba(103, 80, 164, 0.04) 0%,
+    rgba(125, 82, 96, 0.04) 50%,
+    rgba(98, 91, 113, 0.04) 100%
+  );
   z-index: 1;
 }
 
@@ -22,17 +26,41 @@
 }
 
 .hero h1 {
-  background: linear-gradient(45deg, var(--color-accent-1), var(--color-accent-2), var(--color-accent-3));
+  background: linear-gradient(
+    135deg,
+    var(--md-sys-color-primary) 0%,
+    var(--md-sys-color-tertiary) 50%,
+    var(--md-sys-color-secondary) 100%
+  );
   background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+.hero-details p {
+  background: linear-gradient(
+    135deg,
+    var(--md-sys-color-on-surface) 0%,
+    var(--md-sys-color-on-surface-variant) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero p {
-  background: linear-gradient(45deg, var(--color-accent-1), var(--color-accent-2), var(--color-accent-3));
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 {
+    animation: none;
+  }
 }

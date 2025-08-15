@@ -10,18 +10,18 @@
   }
 }
 
-@keyframes accentPulse {
+@keyframes materialPulse {
   0% {
-    border-color: var(--color-accent-1);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 0 0 rgba(103, 80, 164, 0.4);
   }
-  33% {
-    border-color: var(--color-accent-2);
-  }
-  66% {
-    border-color: var(--color-accent-3);
+  50% {
+    border-color: var(--md-sys-color-tertiary);
+    box-shadow: 0 0 0 8px rgba(125, 82, 96, 0.1);
   }
   100% {
-    border-color: var(--color-accent-1);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 0 0 rgba(103, 80, 164, 0.4);
   }
 }
 
@@ -37,44 +37,92 @@
   }
 }
 
-@keyframes float {
+@keyframes materialFloat {
   0% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px) scale(1.02);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-@keyframes glow {
+@keyframes materialGlow {
   0% {
-    box-shadow: 0 0 5px rgba(var(--color-accent-1-rgb), 0.2);
+    box-shadow: var(--md-sys-elevation-level1);
   }
   50% {
-    box-shadow: 0 0 20px rgba(var(--color-accent-2-rgb), 0.4);
+    box-shadow: var(--md-sys-elevation-level3);
   }
   100% {
-    box-shadow: 0 0 5px rgba(var(--color-accent-3-rgb), 0.2);
+    box-shadow: var(--md-sys-elevation-level1);
   }
 }
 
 @keyframes scaleIn {
   from {
     transform: scale(0.95);
+    opacity: 0;
   }
   to {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
-@keyframes shimmer {
+@keyframes slideInUp {
+  from {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
   0% {
-    background-position: -200% center;
+    transform: scale(0);
+    opacity: 1;
   }
   100% {
-    background-position: 200% center;
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Animation utilities */
+.animate-scale-in {
+  animation: scaleIn var(--md-sys-motion-duration-medium3) var(--md-sys-motion-easing-standard);
+}
+
+.animate-slide-in-up {
+  animation: slideInUp var(--md-sys-motion-duration-medium4) var(--md-sys-motion-easing-emphasized);
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
