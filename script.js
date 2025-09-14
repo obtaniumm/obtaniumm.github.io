@@ -1,29 +1,4 @@
-import { initializeTheme, toggleTheme } from './js/theme.js';
-
-initializeTheme();
-
 document.addEventListener('DOMContentLoaded', () => {
-  const themeSwitcher = document.querySelector('.theme-switcher');
-  if (themeSwitcher) {
-    themeSwitcher.addEventListener('click', toggleTheme);
-    
-    // Add idle CRT flicker animation
-    themeSwitcher.classList.add('idle');
-    
-    // Remove idle animation on hover
-    themeSwitcher.addEventListener('mouseenter', () => {
-      themeSwitcher.classList.remove('idle');
-      themeSwitcher.classList.add('hover-rainbow');
-    });
-    
-    themeSwitcher.addEventListener('mouseleave', () => {
-      themeSwitcher.classList.remove('hover-rainbow');
-      setTimeout(() => {
-        themeSwitcher.classList.add('idle');
-      }, 1000);
-    });
-  }
-  
   // Add glitch effect to navbar on scroll
   const navbar = document.querySelector('.navbar');
   if (navbar) {

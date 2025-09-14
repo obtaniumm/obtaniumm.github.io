@@ -1,52 +1,27 @@
-:root[data-theme='light'] {
-  /* Liminal Black & White Color Scheme */
-  --color-background: #0a0a0a;
-  --color-surface: #111111;
-  --color-surface-variant: #1a1a1a;
-  --color-text: #ffffff;
-  --color-text-dim: #cccccc;
-  --color-text-ghost: #888888;
-  --color-border: #333333;
-  --color-accent: #ffffff;
-  
-  /* VHS/CRT Effects */
-  --vhs-green: #00ff41;
-  --vhs-red: #ff0040;
-  --vhs-blue: #0080ff;
-  --vhs-yellow: #ffff00;
-  --vhs-magenta: #ff00ff;
-  --vhs-cyan: #00ffff;
-  
-  /* Glitch colors */
-  --glitch-1: #ff0040;
-  --glitch-2: #00ff41;
-  --glitch-3: #0080ff;
-}
-
-:root[data-theme='dark'] {
-  /* Same as light for liminal effect */
-  --color-background: #0a0a0a;
-  --color-surface: #111111;
-  --color-surface-variant: #1a1a1a;
-  --color-text: #ffffff;
-  --color-text-dim: #cccccc;
-  --color-text-ghost: #888888;
-  --color-border: #333333;
-  --color-accent: #ffffff;
-  
-  --vhs-green: #00ff41;
-  --vhs-red: #ff0040;
-  --vhs-blue: #0080ff;
-  --vhs-yellow: #ffff00;
-  --vhs-magenta: #ff00ff;
-  --vhs-cyan: #00ffff;
-  
-  --glitch-1: #ff0040;
-  --glitch-2: #00ff41;
-  --glitch-3: #0080ff;
-}
-
 :root {
+  /* Ultra Dark Liminal Color Scheme */
+  --color-background: #000000;
+  --color-surface: #050505;
+  --color-surface-variant: #0a0a0a;
+  --color-text: #e0e0e0;
+  --color-text-dim: #999999;
+  --color-text-ghost: #555555;
+  --color-border: #1a1a1a;
+  --color-accent: #ffffff;
+  
+  /* VHS/CRT Effects - Dimmed for darker feel */
+  --vhs-green: #00cc33;
+  --vhs-red: #cc0033;
+  --vhs-blue: #0066cc;
+  --vhs-yellow: #cccc00;
+  --vhs-magenta: #cc00cc;
+  --vhs-cyan: #00cccc;
+  
+  /* Glitch colors - More muted */
+  --glitch-1: #cc0033;
+  --glitch-2: #00cc33;
+  --glitch-3: #0066cc;
+  
   /* VHS/Liminal Typography */
   --font-mono: 'Courier New', 'Lucida Console', Monaco, monospace;
   --font-system: 'MS Sans Serif', 'Chicago', system-ui, monospace;
@@ -66,8 +41,10 @@
   --transition-slow: 0.6s ease-out;
   --transition-glitch: 0.05s linear;
   
-  /* Effects */
-  --scanline-opacity: 0.1;
-  --noise-opacity: 0.05;
-  --glow-size: 20px;
+  /* Enhanced Dark Effects */
+  --scanline-opacity: 0.5;
+  --noise-opacity: 0.08;
+  --glow-size: 25px;
+  --shadow-intensity: 0.8;
+  --vignette-strength: 0.3;
 }
