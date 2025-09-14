@@ -1,16 +1,24 @@
 body {
-  font-family: var(--font-mono);
+  font-family: var(--font-system);
+  font-size: 11px;
   background: 
-    radial-gradient(ellipse at center, rgba(15, 15, 15, 0.6) 0%, rgba(0, 0, 0, 1) 80%),
-    var(--color-background);
+    repeating-linear-gradient(
+      45deg,
+      var(--win98-desktop) 0px,
+      var(--win98-desktop) 1px,
+      #006666 1px,
+      #006666 2px
+    ),
+    var(--win98-desktop);
   color: var(--color-text);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   position: relative;
+  line-height: 1.2;
 }
 
-/* Enhanced CRT Screen Effect - Darker */
+/* CRT Monitor Effect */
 body::before {
   content: '';
   position: fixed;
@@ -22,17 +30,16 @@ body::before {
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 1px,
-      rgba(255, 255, 255, var(--scanline-opacity)) 1px,
-      rgba(255, 255, 255, var(--scanline-opacity)) 2px
-    ),
-    radial-gradient(circle at center, transparent 50%, rgba(0, 0, 0, var(--vignette-strength)) 100%);
+      transparent 2px,
+      rgba(0, 0, 0, var(--scanline-opacity)) 2px,
+      rgba(0, 0, 0, var(--scanline-opacity)) 4px
+    );
   pointer-events: none;
   z-index: 1000;
-  animation: scanlines 1.2s linear infinite;
+  animation: crtScanlines 3s linear infinite;
 }
 
-/* Enhanced Static Noise Overlay - Monochrome */
+/* Static Noise */
 body::after {
   content: '';
   position: fixed;
@@ -41,122 +48,116 @@ body::after {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle, transparent 12%, rgba(255, 255, 255, var(--noise-opacity)) 12%),
-    radial-gradient(circle at 30% 70%, transparent 12%, rgba(0, 170, 34, calc(var(--noise-opacity) * 0.3)) 12%),
-    radial-gradient(circle at 70% 30%, transparent 12%, rgba(136, 136, 136, calc(var(--noise-opacity) * 0.2)) 12%);
-  background-size: 1.5px 1.5px, 3px 3px, 5px 5px;
+    radial-gradient(circle, transparent 80%, rgba(0, 0, 0, var(--noise-opacity)) 80%);
+  background-size: 2px 2px;
   pointer-events: none;
   z-index: 999;
-  animation: staticNoise 0.03s infinite;
-  opacity: 0.8;
+  animation: staticNoise98 0.05s infinite;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
   position: relative;
   z-index: 10;
 }
 
-/* Ultra Dark Navigation */
+/* Windows 98 Taskbar Style Navigation */
 .navbar {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  background: 
-    linear-gradient(180deg, 
-      rgba(0, 0, 0, 0.98) 0%, 
-      rgba(3, 3, 3, 0.95) 50%,
-      rgba(0, 0, 0, 0.92) 100%
-    );
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: blur(20px) brightness(0.2);
+  background: var(--win98-gray);
+  border-top: 2px solid var(--win98-white);
+  border-left: 1px solid var(--win98-white);
+  border-right: 1px solid var(--win98-dark-gray);
+  box-shadow: var(--border-raised);
   z-index: 100;
-  padding: var(--space-md) 0;
-  animation: crtFlicker 5s infinite;
-  box-shadow: 
-    0 3px 25px rgba(0, 0, 0, var(--shadow-intensity)),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+  padding: var(--space-sm);
+  height: 28px;
+  animation: crtFlicker 4s infinite;
 }
 
 .nav-content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  height: 100%;
 }
 
 .logo {
-  font-family: var(--font-terminal);
-  font-size: 1.5rem;
+  font-family: var(--font-system);
+  font-size: 11px;
   font-weight: bold;
   color: var(--color-text);
-  text-shadow: 
-    0 0 var(--glow-size) var(--vhs-primary),
-    0 0 calc(var(--glow-size) * 1.5) rgba(0, 170, 34, 0.2);
-  animation: textGlitch 5s infinite;
+  background: var(--win98-gray);
+  border: 2px outset var(--win98-gray);
+  padding: var(--space-sm) var(--space-md);
   cursor: pointer;
   transition: var(--transition-fast);
-  filter: brightness(0.85);
+  animation: liminalHum 4s infinite ease-in-out;
+  height: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .logo:hover {
-  animation: glitch 0.3s infinite, monochromePulse 2s infinite;
-  filter: brightness(1.1);
+  background-color: var(--win98-light-gray);
 }
 
-/* Ultra Dark Hero Section */
+.logo:active {
+  border: 2px inset var(--win98-gray);
+  transform: translate(1px, 1px);
+}
+
+/* Windows 98 Desktop Window */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 40px);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background: 
-    radial-gradient(ellipse at 25% 25%, rgba(0, 170, 34, 0.04) 0%, transparent 70%),
-    radial-gradient(ellipse at 75% 75%, rgba(136, 136, 136, 0.02) 0%, transparent 70%),
-    radial-gradient(ellipse at center, rgba(6, 6, 6, 0.3) 0%, rgba(0, 0, 0, 0.95) 85%),
-    var(--color-background);
-  animation: vhsDistortion 6s infinite ease-in-out;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    linear-gradient(45deg, transparent 47%, rgba(255, 255, 255, 0.015) 48%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.015) 52%, transparent 53%),
-    linear-gradient(-45deg, transparent 47%, rgba(255, 255, 255, 0.015) 48%, rgba(255, 255, 255, 0.025) 50%, rgba(255, 255, 255, 0.015) 52%, transparent 53%);
-  background-size: 12px 12px;
-  animation: liminalFloat 10s infinite ease-in-out;
-  opacity: 0.5;
+  padding: var(--space-2xl) var(--space-lg);
+  margin-bottom: 40px;
 }
 
 .hero-content {
-  text-align: center;
+  background: var(--win98-gray);
+  border: 2px outset var(--win98-gray);
+  padding: var(--space-xl);
+  min-width: 400px;
   position: relative;
-  z-index: 20;
+  animation: liminalHum 5s infinite ease-in-out;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content::before {
+  content: 'obtanium.exe';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 18px;
+  background: linear-gradient(90deg, var(--win98-navy) 0%, var(--win98-blue) 100%);
+  color: var(--win98-white);
+  font-size: 11px;
+  font-weight: bold;
+  padding: var(--space-xs) var(--space-sm);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--win98-dark-gray);
 }
 
 .hero h1 {
-  font-family: var(--font-terminal);
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: var(--font-system);
+  font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 24px 0 var(--space-lg) 0;
   color: var(--color-text);
-  text-shadow: 
-    0 0 8px var(--vhs-primary),
-    0 0 16px var(--vhs-primary),
-    0 0 24px rgba(0, 170, 34, 0.2),
-    0 0 32px rgba(0, 170, 34, 0.05);
-  animation: textGlitch 4s infinite, crtFlicker 0.25s infinite;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  filter: brightness(0.85);
+  text-align: center;
+  animation: crtFlicker 3s infinite;
 }
 
 .hero-details {
@@ -164,104 +165,79 @@ body::after {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  font-size: 11px;
 }
 
 .hero-details p {
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
-  color: var(--color-text-dim);
+  font-family: var(--font-system);
+  color: var(--color-text);
   margin: 0;
-  text-shadow: 
-    0 0 12px rgba(255, 255, 255, 0.2),
-    0 0 20px rgba(255, 255, 255, 0.05);
-  animation: fadeInGlitch 2s ease-out forwards;
-  opacity: 0;
   position: relative;
-  filter: brightness(0.75);
+  animation: liminalHum 6s infinite ease-in-out;
+  line-height: 1.4;
 }
-
-.hero-details p:nth-child(1) { animation-delay: 0.4s; }
-.hero-details p:nth-child(2) { animation-delay: 0.8s; }
-.hero-details p:nth-child(3) { animation-delay: 1.2s; }
-.hero-details p:nth-child(4) { animation-delay: 1.6s; }
 
 .hero-details p::before {
   content: '> ';
-  color: var(--vhs-primary);
-  animation: terminalBlink 2s infinite;
-  text-shadow: 
-    0 0 8px var(--vhs-primary),
-    0 0 16px rgba(0, 170, 34, 0.3);
+  color: var(--win98-navy);
 }
 
-/* Ultra Dark Content Section */
+/* Content as Windows 98 Dialog */
 .content {
-  padding: var(--space-2xl) 0;
-  background: 
-    linear-gradient(180deg, var(--color-surface) 0%, rgba(0, 0, 0, 0.98) 100%);
+  padding: var(--space-xl) 0;
+  background: var(--win98-gray);
   position: relative;
-  border-top: 2px solid var(--color-border);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.03),
-    inset 0 15px 40px rgba(0, 0, 0, 0.9);
+  margin-bottom: 40px;
 }
 
-.content::before {
-  content: '';
+.content-window {
+  background: var(--win98-gray);
+  border: 2px outset var(--win98-gray);
+  margin: var(--space-lg);
+  padding: var(--space-lg);
+  position: relative;
+  animation: liminalHum 7s infinite ease-in-out;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content-window::before {
+  content: 'Projects - [obtanium.exe]';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 60px,
-      rgba(255, 255, 255, 0.005) 60px,
-      rgba(255, 255, 255, 0.005) 61px
-    ),
-    radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
-  animation: liminalFloat 12s infinite ease-in-out;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 18px;
+  background: linear-gradient(90deg, var(--win98-gray) 0%, var(--win98-light-gray) 100%);
+  color: var(--win98-black);
+  font-size: 11px;
+  font-weight: bold;
+  padding: var(--space-xs) var(--space-sm);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--win98-dark-gray);
+  border-top: 1px solid var(--win98-white);
+  border-left: 1px solid var(--win98-white);
+  border-right: 1px solid var(--win98-dark-gray);
 }
 
 .section-title {
-  font-family: var(--font-terminal);
-  font-size: 2.5rem;
+  font-family: var(--font-system);
+  font-size: 14px;
   font-weight: bold;
   color: var(--color-text);
-  text-align: center;
-  margin-bottom: var(--space-2xl);
-  text-shadow: 
-    0 0 8px var(--vhs-secondary),
-    0 0 16px var(--vhs-secondary),
-    0 0 24px rgba(136, 136, 136, 0.2);
-  animation: textGlitch 5s infinite;
-  position: relative;
-  z-index: 20;
-  filter: brightness(0.85);
+  text-align: left;
+  margin: 24px 0 var(--space-lg) 0;
+  animation: crtFlicker 4s infinite;
 }
 
-.section-title::after {
-  content: '';
-  display: block;
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--vhs-primary), var(--vhs-secondary), var(--vhs-tertiary));
-  margin: var(--space-md) auto 0;
-  animation: monochromePulse 4s infinite;
-  box-shadow: 
-    0 0 8px rgba(0, 170, 34, 0.3),
-    0 0 16px rgba(0, 170, 34, 0.1);
-}
-
-/* Projects Grid */
+/* Projects Grid as Windows 98 Icons */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: var(--space-xl);
   position: relative;
   z-index: 20;
+  padding: var(--space-lg);
 }
 
 /* Responsive */
@@ -270,20 +246,25 @@ body::after {
     padding: 0 var(--space-md);
   }
   
+  .hero-content {
+    min-width: 280px;
+    padding: var(--space-lg);
+  }
+  
   .hero h1 {
-    font-size: clamp(2rem, 10vw, 4rem);
+    font-size: 14px;
   }
   
   .hero-details p {
-    font-size: 1rem;
+    font-size: 10px;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 12px;
   }
   
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: var(--space-lg);
   }
 }

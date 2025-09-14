@@ -4,7 +4,56 @@
 @import 'styles/layout.css';
 @import 'styles/components/card.css';
 
-/* Global Styles */
+/* Global Windows 98 Styles */
 * {
   box-sizing: border-box;
+}
+
+/* Windows 98 Scrollbars */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--win98-gray);
+  border: 2px inset var(--win98-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--win98-gray);
+  border: 2px outset var(--win98-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--win98-light-gray);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--win98-gray);
+}
+
+/* Windows 98 Selection */
+::selection {
+  background: var(--win98-blue);
+  color: var(--win98-white);
+}
+
+::-moz-selection {
+  background: var(--win98-blue);
+  color: var(--win98-white);
+}
+
+/* Disable smooth scrolling for authentic feel */
+html {
+  scroll-behavior: auto;
+}
+
+/* Windows 98 Cursor */
+body {
+  cursor: default;
+}
+
+a, button, .card, .logo {
+  cursor: pointer;
 }

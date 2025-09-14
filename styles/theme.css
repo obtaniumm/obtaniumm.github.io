@@ -1,47 +1,52 @@
 :root {
-  /* Ultra Dark Monochrome Color Scheme */
-  --color-background: #000000;
-  --color-surface: #030303;
-  --color-surface-variant: #060606;
-  --color-text: #cccccc;
-  --color-text-dim: #777777;
-  --color-text-ghost: #444444;
-  --color-border: #111111;
-  --color-accent: #ffffff;
+  /* Windows 98 Color Palette */
+  --color-background: #c0c0c0;
+  --color-surface: #c0c0c0;
+  --color-surface-variant: #c3c3c3;
+  --color-text: #000000;
+  --color-text-dim: #404040;
+  --color-text-ghost: #808080;
+  --color-border: #808080;
+  --color-border-dark: #404040;
+  --color-border-light: #ffffff;
+  --color-accent: #0000ff;
   
-  /* Monochrome VHS Effects - Single color accent */
-  --vhs-primary: #00aa22;
-  --vhs-secondary: #888888;
-  --vhs-tertiary: #555555;
+  /* Windows 98 System Colors */
+  --win98-gray: #c0c0c0;
+  --win98-light-gray: #dfdfdf;
+  --win98-dark-gray: #808080;
+  --win98-darker-gray: #404040;
+  --win98-blue: #0000ff;
+  --win98-navy: #000080;
+  --win98-desktop: #008080;
+  --win98-white: #ffffff;
+  --win98-black: #000000;
   
-  /* Glitch colors - Monochrome */
-  --glitch-1: #00aa22;
-  --glitch-2: #888888;
-  --glitch-3: #555555;
+  /* Windows 98 Typography */
+  --font-system: 'MS Sans Serif', 'Tahoma', 'Verdana', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  --font-title: 'MS Sans Serif', 'Arial', sans-serif;
   
-  /* VHS/Liminal Typography */
-  --font-mono: 'Courier New', 'Lucida Console', Monaco, monospace;
-  --font-system: 'MS Sans Serif', 'Chicago', system-ui, monospace;
-  --font-terminal: 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+  /* Spacing (Windows 98 style) */
+  --space-xs: 2px;
+  --space-sm: 4px;
+  --space-md: 8px;
+  --space-lg: 12px;
+  --space-xl: 16px;
+  --space-2xl: 24px;
   
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
+  /* Windows 98 Effects */
+  --border-raised: inset 1px 1px 0 var(--win98-white), inset -1px -1px 0 var(--win98-dark-gray);
+  --border-sunken: inset -1px -1px 0 var(--win98-white), inset 1px 1px 0 var(--win98-dark-gray);
+  --border-window: 2px outset var(--win98-gray);
   
   /* Transitions */
-  --transition-fast: 0.1s ease-out;
-  --transition-normal: 0.3s ease-out;
-  --transition-slow: 0.6s ease-out;
-  --transition-glitch: 0.05s linear;
+  --transition-fast: 0.05s linear;
+  --transition-normal: 0.1s linear;
+  --transition-slow: 0.2s linear;
   
-  /* Enhanced Dark Effects */
-  --scanline-opacity: 0.18;
-  --noise-opacity: 0.1;
-  --glow-size: 20px;
-  --shadow-intensity: 0.9;
-  --vignette-strength: 0.4;
+  /* CRT Effects for liminal feel */
+  --scanline-opacity: 0.02;
+  --noise-opacity: 0.03;
+  --flicker-intensity: 0.98;
 }
