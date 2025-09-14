@@ -2,7 +2,6 @@
   position: relative;
   overflow: hidden;
   background: var(--md-sys-color-background);
-  border-radius: 0 0 var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large);
 }
 
 .hero::before {
@@ -39,6 +38,22 @@
   );
   z-index: 1;
   animation: materialFloat 20s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  background: linear-gradient(
+    180deg,
+    var(--md-sys-color-background) 0%,
+    transparent 100%
+  );
+  z-index: 3;
+  border-radius: 0 0 var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large);
 }
 
 .hero .container {
@@ -189,10 +204,6 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    border-radius: 0 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large);
-  }
-  
   .hero-details::before {
     left: -0.5rem;
     width: 3px;
@@ -200,5 +211,9 @@
   
   .hero .floating-shape {
     display: none;
+  }
+  
+  .hero::after {
+    border-radius: 0 0 var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-large);
   }
 }

@@ -1,13 +1,15 @@
 .card {
-  background: var(--md-sys-color-surface-container-high);
+  background: var(--md-sys-color-surface-container-highest);
   padding: 1.5rem;
   border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-medium) var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-medium);
-  border: 1px solid var(--md-sys-color-outline-variant);
+  border: 2px solid var(--md-sys-color-outline-variant);
   transition: all var(--md-sys-motion-duration-medium3) var(--md-sys-motion-easing-emphasized);
   position: relative;
   overflow: hidden;
-  box-shadow: var(--md-sys-elevation-level1);
+  box-shadow: var(--md-sys-elevation-level2);
   transform-origin: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .card::before {
@@ -50,9 +52,10 @@
 
 .card:hover {
   border-color: var(--md-sys-color-primary);
-  box-shadow: var(--md-sys-elevation-level4);
+  box-shadow: var(--md-sys-elevation-level5);
   transform: translateY(-12px) scale(1.03) rotate(1deg);
   border-radius: var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-large) var(--md-sys-shape-corner-extra-large);
+  border-width: 3px;
 }
 
 .card:hover::before {
