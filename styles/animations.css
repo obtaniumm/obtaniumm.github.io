@@ -1,4 +1,4 @@
-/* Windows 98 / CRT Monitor Animations */
+/* Windows 98 / CRT Monitor Animations - Slower */
 @keyframes crtScanlines {
   0% {
     transform: translateY(-100vh);
@@ -85,31 +85,117 @@
   }
 }
 
+/* Slower loading dots animation */
 @keyframes loadingDots {
-  0%, 20% {
+  0%, 25% {
     content: '';
   }
-  21%, 40% {
+  26%, 50% {
     content: '.';
   }
-  41%, 60% {
+  51%, 75% {
     content: '..';
   }
-  61%, 80% {
+  76%, 100% {
     content: '...';
   }
-  81%, 100% {
-    content: '';
+}
+
+/* Slow typing animation for system messages */
+@keyframes typeWriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* System boot sequence animations */
+@keyframes systemBoot1 {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes systemBoot2 {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes systemBoot3 {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes systemBoot4 {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes systemBoot5 {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes systemBoot6 {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes windowFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
 /* Animation Classes */
 .crt-flicker {
-  animation: crtFlicker 0.5s infinite linear;
+  animation: crtFlicker 0.8s infinite linear;
 }
 
 .liminal-hum {
-  animation: liminalHum 3s infinite ease-in-out;
+  animation: liminalHum 4s infinite ease-in-out;
 }
 
 .window-shake {
@@ -130,11 +216,54 @@
   width: 8px;
   height: 12px;
   margin-left: 2px;
-  animation: win98Blink 1s infinite;
+  animation: win98Blink 1.2s infinite;
 }
 
 .loading-dots::after {
-  animation: loadingDots 2s infinite;
+  animation: loadingDots 3s infinite;
+}
+
+/* System boot sequence with delays */
+.boot-line-1 {
+  opacity: 0;
+  animation: systemBoot1 1s ease-out 1s forwards;
+}
+
+.boot-line-2 {
+  opacity: 0;
+  animation: systemBoot2 1s ease-out 3s forwards;
+}
+
+.boot-line-3 {
+  opacity: 0;
+  animation: systemBoot3 1s ease-out 5s forwards;
+}
+
+.boot-line-4 {
+  opacity: 0;
+  animation: systemBoot4 1s ease-out 7s forwards;
+}
+
+.boot-line-5 {
+  opacity: 0;
+  animation: systemBoot5 1s ease-out 9s forwards;
+}
+
+.boot-line-6 {
+  opacity: 0;
+  animation: systemBoot6 1s ease-out 11s forwards;
+}
+
+/* Content appears after boot sequence */
+.content {
+  opacity: 0;
+  animation: windowFadeIn 1s ease-out 13s forwards;
+}
+
+/* Body scroll lock during boot */
+body.loading {
+  overflow: hidden;
+  height: 100vh;
 }
 
 /* Hover Effects */
@@ -148,11 +277,18 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .boot-line-1,
+  .boot-line-2,
+  .boot-line-3,
+  .boot-line-4,
+  .boot-line-5,
+  .boot-line-6,
+  .content {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  
+  body.loading {
+    overflow: auto;
   }
 }
