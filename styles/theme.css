@@ -1,26 +1,23 @@
 :root {
-  /* Ultra Dark Liminal Color Scheme */
+  /* Ultra Dark Monochrome Color Scheme */
   --color-background: #000000;
-  --color-surface: #050505;
-  --color-surface-variant: #0a0a0a;
-  --color-text: #e0e0e0;
-  --color-text-dim: #999999;
-  --color-text-ghost: #555555;
-  --color-border: #1a1a1a;
+  --color-surface: #030303;
+  --color-surface-variant: #060606;
+  --color-text: #cccccc;
+  --color-text-dim: #777777;
+  --color-text-ghost: #444444;
+  --color-border: #111111;
   --color-accent: #ffffff;
   
-  /* VHS/CRT Effects - Dimmed for darker feel */
-  --vhs-green: #00cc33;
-  --vhs-red: #cc0033;
-  --vhs-blue: #0066cc;
-  --vhs-yellow: #cccc00;
-  --vhs-magenta: #cc00cc;
-  --vhs-cyan: #00cccc;
+  /* Monochrome VHS Effects - Single color accent */
+  --vhs-primary: #00aa22;
+  --vhs-secondary: #888888;
+  --vhs-tertiary: #555555;
   
-  /* Glitch colors - More muted */
-  --glitch-1: #cc0033;
-  --glitch-2: #00cc33;
-  --glitch-3: #0066cc;
+  /* Glitch colors - Monochrome */
+  --glitch-1: #00aa22;
+  --glitch-2: #888888;
+  --glitch-3: #555555;
   
   /* VHS/Liminal Typography */
   --font-mono: 'Courier New', 'Lucida Console', Monaco, monospace;
@@ -42,9 +39,9 @@
   --transition-glitch: 0.05s linear;
   
   /* Enhanced Dark Effects */
-  --scanline-opacity: 0.5;
-  --noise-opacity: 0.08;
-  --glow-size: 25px;
-  --shadow-intensity: 0.8;
-  --vignette-strength: 0.3;
+  --scanline-opacity: 0.18;
+  --noise-opacity: 0.1;
+  --glow-size: 20px;
+  --shadow-intensity: 0.9;
+  --vignette-strength: 0.4;
 }

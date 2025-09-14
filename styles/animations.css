@@ -1,4 +1,4 @@
-/* VHS/CRT Animations */
+/* VHS/CRT Animations - No Rainbow */
 @keyframes scanlines {
   0% {
     transform: translateY(-100vh);
@@ -13,10 +13,10 @@
     opacity: 1;
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.7;
   }
   75% {
-    opacity: 0.9;
+    opacity: 0.85;
   }
 }
 
@@ -86,23 +86,14 @@
   }
 }
 
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
 @keyframes crtFlicker {
   0%, 100% {
     opacity: 1;
     filter: brightness(1) contrast(1);
   }
   50% {
-    opacity: 0.95;
-    filter: brightness(1.1) contrast(1.2);
+    opacity: 0.92;
+    filter: brightness(1.05) contrast(1.1);
   }
 }
 
@@ -145,11 +136,11 @@
 @keyframes liminalFloat {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
-    opacity: 0.7;
+    opacity: 0.6;
   }
   50% {
-    transform: translateY(-10px) rotate(1deg);
-    opacity: 1;
+    transform: translateY(-8px) rotate(0.5deg);
+    opacity: 0.8;
   }
 }
 
@@ -158,13 +149,13 @@
     transform: scaleX(1) skewX(0deg);
   }
   25% {
-    transform: scaleX(1.01) skewX(0.1deg);
+    transform: scaleX(1.005) skewX(0.05deg);
   }
   50% {
-    transform: scaleX(0.99) skewX(-0.1deg);
+    transform: scaleX(0.998) skewX(-0.05deg);
   }
   75% {
-    transform: scaleX(1.005) skewX(0.05deg);
+    transform: scaleX(1.002) skewX(0.025deg);
   }
   100% {
     transform: scaleX(1) skewX(0deg);
@@ -175,10 +166,10 @@
   0% {
     opacity: 0;
     transform: translateY(20px);
-    filter: blur(5px);
+    filter: blur(3px);
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.7;
     transform: translateY(-2px);
     filter: blur(1px);
   }
@@ -198,6 +189,15 @@
   }
 }
 
+@keyframes monochromePulse {
+  0%, 100% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(1.1) contrast(1.05);
+  }
+}
+
 /* Animation Classes */
 .glitch-effect {
   animation: glitch 0.3s infinite linear alternate-reverse;
@@ -205,10 +205,6 @@
 
 .text-glitch {
   animation: textGlitch 2s infinite linear alternate-reverse;
-}
-
-.rainbow-effect {
-  animation: rainbow 3s infinite linear;
 }
 
 .crt-flicker {
@@ -234,7 +230,11 @@
 .terminal-cursor::after {
   content: '_';
   animation: terminalBlink 1s infinite;
-  color: var(--vhs-green);
+  color: var(--vhs-primary);
+}
+
+.monochrome-pulse {
+  animation: monochromePulse 3s infinite ease-in-out;
 }
 
 /* Hover Effects */
@@ -242,12 +242,12 @@
   animation: glitch 0.2s infinite;
 }
 
-.hover-rainbow:hover {
-  animation: rainbow 1s infinite linear;
-}
-
 .hover-static:hover {
   animation: staticNoise 0.1s infinite;
+}
+
+.hover-pulse:hover {
+  animation: monochromePulse 1s infinite;
 }
 
 /* Reduced Motion */
