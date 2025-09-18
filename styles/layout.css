@@ -1,24 +1,13 @@
+/* Frutiger Aero Layout Styles */
 body {
-  font-family: var(--font-system);
-  font-size: 11px;
-  background: 
-    repeating-linear-gradient(
-      45deg,
-      var(--win98-desktop) 0px,
-      var(--win98-desktop) 1px,
-      #006666 1px,
-      #006666 2px
-    ),
-    var(--win98-desktop);
-  color: var(--color-text);
-  margin: 0;
-  padding: 0;
+  background: var(--bg-primary);
+  color: white;
   overflow-x: hidden;
   position: relative;
-  line-height: 1.2;
+  min-height: 100vh;
 }
 
-/* CRT Monitor Effect */
+/* Background Effects */
 body::before {
   content: '';
   position: fixed;
@@ -27,244 +16,254 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, var(--scanline-opacity)) 2px,
-      rgba(0, 0, 0, var(--scanline-opacity)) 4px
-    );
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(177, 158, 239, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 107, 157, 0.05) 0%, transparent 50%);
+  z-index: var(--z-background);
   pointer-events: none;
-  z-index: 1000;
-  animation: crtScanlines 3s linear infinite;
 }
 
-/* Static Noise */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle, transparent 80%, rgba(0, 0, 0, var(--noise-opacity)) 80%);
-  background-size: 2px 2px;
-  pointer-events: none;
-  z-index: 999;
-  animation: staticNoise98 0.05s infinite;
-}
-
+/* Container */
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
   position: relative;
-  z-index: 10;
+  z-index: var(--z-content);
 }
 
-/* Windows 98 Taskbar Style Navigation */
+/* Glass Navigation */
 .navbar {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  background: var(--win98-gray);
-  border-top: 2px solid var(--win98-white);
-  border-left: 1px solid var(--win98-white);
-  border-right: 1px solid var(--win98-dark-gray);
-  box-shadow: var(--border-raised);
-  z-index: 100;
-  padding: var(--space-sm);
-  height: 28px;
-  animation: crtFlicker 4s infinite;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-bottom: var(--glass-border);
+  z-index: var(--z-overlay);
+  padding: var(--space-md) 0;
+  transition: all var(--transition-normal);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .nav-content {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
 }
 
 .logo {
-  font-family: var(--font-system);
-  font-size: 11px;
-  font-weight: bold;
-  color: var(--color-text);
-  background: var(--win98-gray);
-  border: 2px outset var(--win98-gray);
-  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all var(--transition-normal);
   cursor: pointer;
-  transition: var(--transition-fast);
-  animation: liminalHum 4s infinite ease-in-out;
-  height: 20px;
-  display: flex;
-  align-items: center;
 }
 
 .logo:hover {
-  background-color: var(--win98-light-gray);
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
 }
 
-.logo:active {
-  border: 2px inset var(--win98-gray);
-  transform: translate(1px, 1px);
+/* Theme Switcher */
+.theme-switcher {
+  background: rgba(255, 255, 255, 0.1);
+  border: var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Windows 98 Desktop Window */
+.theme-switcher:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Hero Section */
 .hero {
-  min-height: calc(100vh - 40px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: var(--space-2xl) var(--space-lg);
-  margin-bottom: 40px;
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-background);
 }
 
 .hero-content {
-  background: var(--win98-gray);
-  border: 2px outset var(--win98-gray);
-  padding: var(--space-xl);
-  min-width: 400px;
   position: relative;
-  animation: liminalHum 5s infinite ease-in-out;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero-content::before {
-  content: 'obtanium.exe';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  height: 18px;
-  background: linear-gradient(90deg, var(--win98-navy) 0%, var(--win98-blue) 100%);
-  color: var(--win98-white);
-  font-size: 11px;
-  font-weight: bold;
-  padding: var(--space-xs) var(--space-sm);
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--win98-dark-gray);
-}
-
-.hero h1 {
-  font-family: var(--font-system);
-  font-size: 16px;
-  font-weight: bold;
-  margin: 24px 0 var(--space-lg) 0;
-  color: var(--color-text);
+  z-index: var(--z-content);
   text-align: center;
-  animation: crtFlicker 3s infinite;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.hero-details {
-  margin-top: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  font-size: 11px;
-}
-
-.hero-details p {
-  font-family: var(--font-system);
-  color: var(--color-text);
-  margin: 0;
+.hero-title {
   position: relative;
-  animation: liminalHum 6s infinite ease-in-out;
-  line-height: 1.4;
+  height: 200px;
+  margin-bottom: var(--space-xl);
 }
 
-.hero-details p::before {
-  content: '> ';
-  color: var(--win98-navy);
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-2xl);
+  animation: fadeInUp 1s ease-out 0.5s both;
 }
 
-/* Content as Windows 98 Dialog */
+/* Content Section */
 .content {
-  padding: var(--space-xl) 0;
-  background: var(--win98-gray);
+  padding: var(--space-3xl) 0;
   position: relative;
-  margin-bottom: 40px;
+  z-index: var(--z-content);
 }
 
-.content-window {
-  background: var(--win98-gray);
-  border: 2px outset var(--win98-gray);
-  margin: var(--space-lg);
-  padding: var(--space-lg);
-  position: relative;
-  animation: liminalHum 7s infinite ease-in-out;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.content-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl);
+  margin: var(--space-2xl) 0;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
 }
 
-.content-window::before {
-  content: 'Projects - [obtanium.exe]';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  height: 18px;
-  background: linear-gradient(90deg, var(--win98-gray) 0%, var(--win98-light-gray) 100%);
-  color: var(--win98-black);
-  font-size: 11px;
-  font-weight: bold;
-  padding: var(--space-xs) var(--space-sm);
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--win98-dark-gray);
-  border-top: 1px solid var(--win98-white);
-  border-left: 1px solid var(--win98-white);
-  border-right: 1px solid var(--win98-dark-gray);
+.content-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
 }
 
 .section-title {
-  font-family: var(--font-system);
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--color-text);
-  text-align: left;
-  margin: 24px 0 var(--space-lg) 0;
-  animation: crtFlicker 4s infinite;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease-out both;
 }
 
-/* Projects Grid as Windows 98 Icons */
+/* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-xl);
-  position: relative;
-  z-index: 20;
-  padding: var(--space-lg);
+  margin-top: var(--space-2xl);
 }
 
-/* Responsive */
+/* Floating Elements */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.floating-orb:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-orb:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floating-orb:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-md);
   }
   
-  .hero-content {
-    min-width: 280px;
-    padding: var(--space-lg);
+  .nav-content {
+    padding: 0 var(--space-md);
   }
   
-  .hero h1 {
-    font-size: 14px;
+  .hero {
+    padding: var(--space-2xl) 0;
   }
   
-  .hero-details p {
-    font-size: 10px;
+  .hero-title {
+    height: 150px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
   
   .section-title {
-    font-size: 12px;
+    font-size: 2rem;
+  }
+  
+  .content-glass {
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
   }
   
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    height: 120px;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .content-glass {
+    padding: var(--space-md);
   }
 }
