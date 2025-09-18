@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>obtanium.exe - Windows 98</title>
+    <title>obtanium - Frutiger Aero</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#c0c0c0" />
+    <meta name="theme-color" content="#00D4FF" />
+    <meta name="description" content="obtanium - A beautiful Frutiger Aero inspired portfolio" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
   </head>
-  <body class="loading">
-    <!-- Windows 98 Taskbar -->
+  <body>
+    <!-- Frutiger Aero Navigation -->
     <nav class="navbar">
       <div class="nav-content">
-        <div class="logo">Start</div>
+        <div class="logo">obtanium</div>
+        <div class="theme-switcher">
+          <div class="theme-switcher-icon"></div>
+        </div>
       </div>
     </nav>
     
-    <!-- Desktop Window -->
+    <!-- Hero Section with ASCII Text -->
     <header class="hero">
+      <div class="hero-background">
+        <div id="pixel-blast-container" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+      </div>
       <div class="container">
         <div class="hero-content">
-          <h1 class="cursor-blink">obtanium</h1>
-          <div class="hero-details">
-            <p class="boot-line-1">System initialization<span class="loading-dots"></span></p>
-            <p class="boot-line-2">Loading device drivers<span class="loading-dots"></span></p>
-            <p class="boot-line-3">Scanning hardware configuration<span class="loading-dots"></span></p>
-            <p class="boot-line-4">Loading user profile: obtanium<span class="loading-dots"></span></p>
-            <p class="boot-line-5">Initializing desktop environment<span class="loading-dots"></span></p>
-            <p class="boot-line-6">&gt; Boot sequence complete. Welcome to Windows 98.</p>
+          <div class="hero-title">
+            <div id="ascii-text-container" style="width: 100%; height: 100%; position: relative;"></div>
           </div>
+          <p class="hero-subtitle">Welcome to the future of digital aesthetics</p>
         </div>
       </div>
+      
+      <!-- Floating Decorative Elements -->
+      <div class="floating-orb"></div>
+      <div class="floating-orb"></div>
+      <div class="floating-orb"></div>
+      <div class="floating-orb"></div>
     </header>
     
-    <!-- Desktop with Icons - Hidden until loading complete -->
+    <!-- Content Section -->
     <main class="content">
       <div class="container">
         <div class="content-window">
-          <h2 class="section-title">My Computer</h2>
+          <h2 class="section-title">Projects</h2>
           <div class="projects-grid">
             <a href="https://modrinth.com/modpack/kpack-189" class="card-link">
-              <div class="card card-variant-2 liminal-hum">
-                <h3>KPack189.zip</h3>
+              <div class="card card-variant-1 animate-fade-in-up">
+                <h3>KPack189</h3>
+                <p>A carefully curated modpack for Minecraft featuring performance optimizations and quality-of-life improvements.</p>
               </div>
             </a>
           </div>

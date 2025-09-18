@@ -1,0 +1,212 @@
+/* Frutiger Aero Theme Switcher - 3DS Inspired */
+
+.theme-switcher {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm);
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Theme Switcher Glow Ring */
+.theme-switcher::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    var(--color-primary) 0%, 
+    var(--color-cyan) 25%, 
+    var(--color-lime) 50%, 
+    var(--color-warning) 75%, 
+    var(--color-accent) 100%);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+  animation: rainbow-rotate 3s linear infinite;
+}
+
+@keyframes rainbow-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.theme-switcher:hover::before {
+  opacity: 1;
+}
+
+.theme-switcher:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1) rotate(180deg);
+  box-shadow: var(--shadow-glow-rainbow);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-switcher:active {
+  transform: scale(0.95) rotate(180deg);
+  transition: all var(--transition-fast);
+}
+
+/* Theme Switcher Icon */
+.theme-switcher-icon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, 
+    var(--color-primary) 0%, 
+    var(--color-secondary) 50%, 
+    var(--color-accent) 100%);
+  border-radius: 50%;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.theme-switcher-icon::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+}
+
+.theme-switcher:hover .theme-switcher-icon {
+  background: linear-gradient(135deg, 
+    var(--color-cyan) 0%, 
+    var(--color-lime) 50%, 
+    var(--color-warning) 100%);
+  animation: icon-pulse 1s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Focus States */
+.theme-switcher:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* Loading State */
+.theme-switcher.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.theme-switcher.loading .theme-switcher-icon {
+  animation: loading-spin 1s linear infinite;
+}
+
+@keyframes loading-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Theme Variants */
+.theme-switcher.theme-light .theme-switcher-icon {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+}
+
+.theme-switcher.theme-dark .theme-switcher-icon {
+  background: linear-gradient(135deg, #4A90E2, #7B68EE);
+}
+
+.theme-switcher.theme-auto .theme-switcher-icon {
+  background: linear-gradient(135deg, 
+    var(--color-primary), 
+    var(--color-secondary), 
+    var(--color-accent));
+  animation: auto-theme-cycle 3s ease-in-out infinite;
+}
+
+@keyframes auto-theme-cycle {
+  0%, 100% { filter: hue-rotate(0deg); }
+  33% { filter: hue-rotate(120deg); }
+  66% { filter: hue-rotate(240deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .theme-switcher {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .theme-switcher-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .theme-switcher:hover {
+    transform: scale(1.05) rotate(90deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-switcher {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .theme-switcher-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .theme-switcher {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .theme-switcher:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-switcher {
+    transition: none;
+  }
+  
+  .theme-switcher:hover {
+    transform: none;
+    animation: none;
+  }
+  
+  .theme-switcher::before {
+    animation: none;
+  }
+  
+  .theme-switcher-icon {
+    animation: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .theme-switcher {
+    display: none;
+  }
+}

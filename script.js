@@ -1,164 +1,165 @@
+import ASCIIText from './components/ASCIIText.js';
+import PixelBlast from './components/PixelBlast.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-  const body = document.body;
-  
-  // Total loading time: 14 seconds (13s animation + 1s buffer)
-  const LOADING_DURATION = 14000;
-  
-  // Prevent scrolling during loading
-  let scrollPosition = 0;
-  
-  function disableScroll() {
-    scrollPosition = window.pageYOffset;
-    body.style.overflow = 'hidden';
-    body.style.position = 'fixed';
-    body.style.top = `-${scrollPosition}px`;
-    body.style.width = '100%';
-  }
-  
-  function enableScroll() {
-    body.style.removeProperty('overflow');
-    body.style.removeProperty('position');
-    body.style.removeProperty('top');
-    body.style.removeProperty('width');
-    window.scrollTo(0, scrollPosition);
-    body.classList.remove('loading');
-  }
-  
-  // Disable scrolling immediately
-  disableScroll();
-  
-  // Prevent wheel, touch, and keyboard scrolling
-  function preventDefault(e) {
-    e.preventDefault();
-  }
-  
-  function preventDefaultForScrollKeys(e) {
-    const scrollKeys = {
-      37: true, // left
-      38: true, // up
-      39: true, // right
-      40: true, // down
-      32: true, // spacebar
-      33: true, // page up
-      34: true, // page down
-      35: true, // end
-      36: true  // home
-    };
+  // Initialize PixelBlast background
+  const pixelBlastContainer = document.getElementById('pixel-blast-container');
+  if (pixelBlastContainer) {
+    // Create PixelBlast component
+    const pixelBlastElement = document.createElement('div');
+    pixelBlastElement.style.width = '100%';
+    pixelBlastElement.style.height = '100%';
+    pixelBlastElement.style.position = 'absolute';
+    pixelBlastContainer.appendChild(pixelBlastElement);
     
-    if (scrollKeys[e.keyCode]) {
-      preventDefault(e);
-      return false;
+    // Initialize PixelBlast with React-like props
+    const pixelBlast = new PixelBlast({
+      variant: 'circle',
+      pixelSize: 6,
+      color: '#B19EEF',
+      patternScale: 3,
+      patternDensity: 1.2,
+      pixelSizeJitter: 0.5,
+      enableRipples: true,
+      rippleSpeed: 0.4,
+      rippleThickness: 0.12,
+      rippleIntensityScale: 1.5,
+      liquid: true,
+      liquidStrength: 0.12,
+      liquidRadius: 1.2,
+      liquidWobbleSpeed: 5,
+      speed: 0.6,
+      edgeFade: 0.25,
+      transparent: true
+    });
+  }
+  
+  // Initialize ASCII Text
+  const asciiContainer = document.getElementById('ascii-text-container');
+  if (asciiContainer) {
+    // Create ASCII Text component
+    const asciiText = new ASCIIText({
+      text: 'obtanium',
+      enableWaves: true,
+      asciiFontSize: 8,
+      textFontSize: 200,
+      textColor: '#fdf9f3',
+      planeBaseHeight: 8
+    });
+  }
+  
+  // Enhanced navbar scroll effect
+  const navbar = document.querySelector('.navbar');
+  let lastScrollY = window.scrollY;
+  
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-  }
-  
-  // Add event listeners to prevent scrolling
-  const scrollEvents = ['wheel', 'DOMMouseScroll', 'mousewheel', 'touchmove'];
-  scrollEvents.forEach(event => {
-    window.addEventListener(event, preventDefault, { passive: false });
+    
+    lastScrollY = currentScrollY;
   });
   
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-  
-  // Remove loading state and enable scrolling after animation completes
-  setTimeout(() => {
-    // Remove event listeners
-    scrollEvents.forEach(event => {
-      window.removeEventListener(event, preventDefault, { passive: false });
-    });
-    
-    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-    
-    // Enable scrolling
-    enableScroll();
-    
-    // Add completion sound effect (optional - commented out)
-    // const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LHeSsFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjm96MaOOQgYYrzr4nVsE');
-    
-    console.log('Windows 98 boot sequence complete');
-  }, LOADING_DURATION);
-  
-  // Add double-click functionality to desktop icons
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
-    let clickCount = 0;
-    let clickTimer = null;
-    
-    card.addEventListener('click', (e) => {
-      clickCount++;
-      
-      if (clickCount === 1) {
-        // Single click - select icon
-        card.style.background = 'rgba(0, 0, 128, 0.3)';
-        card.style.color = '#ffffff';
-        
-        clickTimer = setTimeout(() => {
-          clickCount = 0;
-          // Deselect after timeout
-          card.style.background = '';
-          card.style.color = '';
-        }, 500);
-        
-      } else if (clickCount === 2) {
-        // Double click - open/navigate
-        clearTimeout(clickTimer);
-        clickCount = 0;
-        
-        // Add opening animation
-        card.classList.add('double-clicked');
-        
-        // If it's a link, follow it after animation
-        const link = card.closest('a');
-        if (link) {
-          setTimeout(() => {
-            window.open(link.href, '_blank');
-          }, 200);
-        }
-        
-        setTimeout(() => {
-          card.classList.remove('double-clicked');
-          card.style.background = '';
-          card.style.color = '';
-        }, 300);
-      }
-    });
-  });
-  
-  // Add Windows 98 system sounds simulation (visual feedback)
-  const logo = document.querySelector('.logo');
-  if (logo) {
-    logo.addEventListener('click', () => {
-      // Simulate start menu click
-      logo.style.background = '#c3c3c3';
-      logo.style.border = '2px inset #c0c0c0';
+  // Theme switcher functionality
+  const themeSwitcher = document.querySelector('.theme-switcher');
+  if (themeSwitcher) {
+    themeSwitcher.addEventListener('click', () => {
+      // Add click animation
+      themeSwitcher.classList.add('loading');
       
       setTimeout(() => {
-        logo.style.background = '#c0c0c0';
-        logo.style.border = '2px outset #c0c0c0';
-      }, 150);
+        themeSwitcher.classList.remove('loading');
+        // Theme switching logic would go here
+        console.log('Theme switched!');
+      }, 500);
     });
   }
   
-  // Add random system glitches for liminal effect (after loading)
-  setTimeout(() => {
-    setInterval(() => {
-      if (Math.random() < 0.05) { // 5% chance every 3 seconds
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-          navbar.classList.add('window-shake');
-          setTimeout(() => {
-            navbar.classList.remove('window-shake');
-          }, 200);
-        }
-      }
-    }, 3000);
-  }, LOADING_DURATION);
+  // Enhanced card interactions
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, index) => {
+    // Add stagger animation delay
+    card.style.setProperty('--stagger-index', index);
+    
+    // Add hover sound effect simulation
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('animate-elastic-bounce');
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('animate-elastic-bounce');
+    });
+    
+    // Add click ripple effect
+    card.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.style.position = 'absolute';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.animation = 'ripple 0.6s linear';
+      ripple.style.left = (e.clientX - card.offsetLeft) + 'px';
+      ripple.style.top = (e.clientY - card.offsetTop) + 'px';
+      ripple.style.width = ripple.style.height = '20px';
+      ripple.style.marginLeft = ripple.style.marginTop = '-10px';
+      
+      card.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
   
-  // Simulate memory leak warnings (liminal effect)
-  setTimeout(() => {
-    setInterval(() => {
-      if (Math.random() < 0.02) { // 2% chance every 10 seconds
-        console.warn('System resources running low');
+  // Add CSS for ripple animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
       }
-    }, 10000);
-  }, LOADING_DURATION);
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Parallax effect for floating orbs
+  const floatingOrbs = document.querySelectorAll('.floating-orb');
+  window.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    
+    floatingOrbs.forEach((orb, index) => {
+      const speed = (index + 1) * 0.02;
+      const x = (mouseX - 0.5) * speed * 100;
+      const y = (mouseY - 0.5) * speed * 100;
+      
+      orb.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  });
+  
+  // Performance optimization: Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in-up');
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all cards for scroll animations
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+  
+  console.log('🌈 Frutiger Aero experience initialized!');
 });

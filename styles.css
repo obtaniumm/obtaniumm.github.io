@@ -3,57 +3,69 @@
 @import 'styles/animations.css';
 @import 'styles/layout.css';
 @import 'styles/components/card.css';
+@import 'styles/components/theme-switcher.css';
 
-/* Global Windows 98 Styles */
+/* Global Frutiger Aero Styles */
 * {
   box-sizing: border-box;
 }
 
-/* Windows 98 Scrollbars */
+/* Enhanced Scrollbars */
 ::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--win98-gray);
-  border: 2px inset var(--win98-gray);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--win98-gray);
-  border: 2px outset var(--win98-gray);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--win98-light-gray);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--win98-gray);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* Windows 98 Selection */
+/* Enhanced Selection */
 ::selection {
-  background: var(--win98-blue);
-  color: var(--win98-white);
+  background: var(--color-primary);
+  color: white;
+  text-shadow: none;
 }
 
 ::-moz-selection {
-  background: var(--win98-blue);
-  color: var(--win98-white);
+  background: var(--color-primary);
+  color: white;
+  text-shadow: none;
 }
 
-/* Disable smooth scrolling for authentic feel */
+/* Smooth scrolling */
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
-/* Windows 98 Cursor */
+/* Enhanced Cursor */
 body {
   cursor: default;
 }
 
-a, button, .card, .logo {
+a, button, .card, .logo, .theme-switcher {
   cursor: pointer;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
