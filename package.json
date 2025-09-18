@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "postprocessing": "^6.37.8",
+    "react": "^19.1.1",
     "three": "^0.180.0"
   },
   "devDependencies": {
