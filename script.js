@@ -1,5 +1,5 @@
-import ASCIIText from './components/ASCIIText.jsx';
-import PixelBlast from './components/PixelBlast.jsx';
+import ASCIIText from '/components/ASCIIText.jsx';
+import PixelBlast from '/components/PixelBlast.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize PixelBlast background
