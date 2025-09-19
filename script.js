@@ -1,4 +1,4 @@
-import ASCIIText from './components/ASCIIText.js';
+import ASCIIText from './components/ASCIIText.jsx';
 import PixelBlast from './components/PixelBlast.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
