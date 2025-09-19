@@ -1,0 +1,521 @@
+/* Dark Frutiger Aero Components - 3DS Inspired */
+
+/* Card Components */
+.card {
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-backdrop-strong);
+  -webkit-backdrop-filter: var(--glass-backdrop-strong);
+  border: var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: 0;
+  transition: all var(--transition-bounce);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.card-dark {
+  background: var(--glass-dark-strong);
+  border: var(--glass-border-strong);
+}
+
+/* Card Glow Effect */
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 168, 204, 0.05) 0%, 
+    rgba(139, 126, 216, 0.05) 50%, 
+    rgba(232, 90, 138, 0.05) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: var(--radius-2xl);
+}
+
+/* Card Top Highlight */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.4) 50%, 
+    transparent 100%);
+  z-index: 2;
+}
+
+.card:hover .card-glow {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: var(--shadow-glow-rainbow);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--glass-dark-strong);
+}
+
+.card:active {
+  transform: translateY(-8px) scale(1.01);
+  transition: all var(--transition-fast);
+}
+
+/* Card Content */
+.card-content {
+  padding: var(--space-xl);
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  background: var(--text-gradient-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+  transition: background-position var(--transition-normal);
+}
+
+.card:hover h3 {
+  background-position: 100% 0;
+  animation: textShimmer 2s ease-in-out infinite;
+}
+
+.card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+  transition: color var(--transition-normal);
+}
+
+.card:hover p {
+  color: var(--text-primary);
+}
+
+/* Card Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.tag {
+  background: var(--glass-dark);
+  color: var(--text-secondary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: var(--glass-border);
+  transition: all var(--transition-normal);
+}
+
+.card:hover .tag {
+  background: var(--glass-dark-strong);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Arrow */
+.card-arrow {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--transition-normal);
+  color: var(--color-primary);
+  z-index: 2;
+}
+
+.card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Card Link Wrapper */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm);
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Theme Switcher Glow Ring */
+.theme-switcher::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    var(--color-primary) 0%, 
+    var(--color-cyan) 25%, 
+    var(--color-lime) 50%, 
+    var(--color-warning) 75%, 
+    var(--color-accent) 100%);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+  animation: rainbowRotate 4s linear infinite;
+}
+
+@keyframes rainbowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.theme-switcher:hover::before {
+  opacity: 1;
+}
+
+.theme-switcher:hover {
+  background: var(--glass-dark-strong);
+  transform: scale(1.1) rotate(180deg);
+  box-shadow: var(--shadow-glow-rainbow);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-switcher:active {
+  transform: scale(0.95) rotate(180deg);
+  transition: all var(--transition-fast);
+}
+
+/* Theme Switcher Icon */
+.theme-switcher-icon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, 
+    var(--color-primary) 0%, 
+    var(--color-secondary) 50%, 
+    var(--color-accent) 100%);
+  border-radius: 50%;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.theme-switcher-icon::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  background: rgba(11, 20, 38, 0.8);
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+}
+
+.theme-switcher:hover .theme-switcher-icon {
+  background: linear-gradient(135deg, 
+    var(--color-cyan) 0%, 
+    var(--color-lime) 50%, 
+    var(--color-warning) 100%);
+  animation: iconPulse 1s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Focus States */
+.theme-switcher:focus-visible,
+.card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* Loading States */
+.theme-switcher.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.theme-switcher.loading .theme-switcher-icon {
+  animation: loadingSpin 1s linear infinite;
+}
+
+.card.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.card.loading .card-glow {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%);
+  animation: loadingShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes loadingShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Interactive States */
+.card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* Card Grid Enhancements */
+.card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+/* Button Components */
+.btn {
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+  border: var(--glass-border);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--bg-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+  background: var(--glass-dark-strong);
+  color: var(--text-primary);
+  border: var(--glass-border-strong);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: var(--glass-border-strong);
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-glow-rainbow);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(1);
+  transition: all var(--transition-fast);
+}
+
+/* Input Components */
+.input {
+  background: var(--glass-dark);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  background: var(--glass-dark-strong);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 168, 204, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    border-radius: var(--radius-xl);
+  }
+  
+  .card-content {
+    padding: var(--space-lg);
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+  
+  .theme-switcher {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .theme-switcher-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .theme-switcher:hover {
+    transform: scale(1.05) rotate(90deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    border-radius: var(--radius-lg);
+  }
+  
+  .card-content {
+    padding: var(--space-md);
+  }
+  
+  .card h3 {
+    font-size: 1.125rem;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px) scale(1.005);
+  }
+  
+  .theme-switcher {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .theme-switcher-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .btn {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.9rem;
+  }
+}
+
+/* High Performance Mode */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .theme-switcher,
+  .btn {
+    transition: none;
+  }
+  
+  .card:hover,
+  .theme-switcher:hover,
+  .btn:hover {
+    transform: none;
+    animation: none;
+  }
+  
+  .theme-switcher::before {
+    animation: none;
+  }
+  
+  .theme-switcher-icon {
+    animation: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .card,
+  .theme-switcher,
+  .btn,
+  .input {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  .card:hover,
+  .theme-switcher:hover,
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .card,
+  .theme-switcher,
+  .btn {
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  
+  .card-glow,
+  .theme-switcher::before {
+    display: none;
+  }
+  
+  .theme-switcher {
+    display: none;
+  }
+}

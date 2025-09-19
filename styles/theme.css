@@ -1,47 +1,56 @@
-/* Frutiger Aero Theme - 3DS Inspired */
+/* Dark Frutiger Aero Theme - 3DS Inspired */
 :root {
-  /* Primary Frutiger Aero Colors */
-  --color-primary: #00D4FF;
-  --color-secondary: #B19EEF;
-  --color-accent: #FF6B9D;
-  --color-success: #00FF88;
-  --color-warning: #FFD700;
+  /* Dark Primary Colors */
+  --color-primary: #00A8CC;
+  --color-secondary: #8B7ED8;
+  --color-accent: #E85A8A;
+  --color-success: #00CC66;
+  --color-warning: #FFB800;
   --color-error: #FF4757;
   
-  /* Extended Frutiger Palette */
-  --color-cyan: #00FFFF;
-  --color-lime: #CCFF00;
-  --color-orange: #FF8C00;
-  --color-pink: #FF69B4;
-  --color-purple: #9370DB;
-  --color-teal: #20B2AA;
+  /* Dark Extended Palette */
+  --color-cyan: #00E6E6;
+  --color-lime: #AAFF00;
+  --color-orange: #FF7A00;
+  --color-pink: #FF5599;
+  --color-purple: #7A5FDB;
+  --color-teal: #1A9B8E;
   
-  /* Glass/Aero Colors */
-  --glass-white: rgba(255, 255, 255, 0.15);
-  --glass-blue: rgba(0, 212, 255, 0.1);
-  --glass-purple: rgba(177, 158, 239, 0.1);
-  --glass-pink: rgba(255, 107, 157, 0.1);
-  --glass-cyan: rgba(0, 255, 255, 0.1);
-  --glass-lime: rgba(204, 255, 0, 0.1);
+  /* Dark Background System */
+  --bg-primary: #0B1426;
+  --bg-secondary: #1A1F3A;
+  --bg-tertiary: #2A2F45;
+  --bg-surface: #1E2338;
+  --bg-surface-elevated: #252B42;
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --bg-glass-strong: rgba(255, 255, 255, 0.08);
   
-  /* Background Gradients */
-  --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --bg-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --bg-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --bg-quaternary: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-  --bg-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  /* Dark Glass Effects */
+  --glass-dark: rgba(255, 255, 255, 0.05);
+  --glass-dark-strong: rgba(255, 255, 255, 0.1);
+  --glass-blue: rgba(0, 168, 204, 0.08);
+  --glass-purple: rgba(139, 126, 216, 0.08);
+  --glass-pink: rgba(232, 90, 138, 0.08);
+  --glass-cyan: rgba(0, 230, 230, 0.08);
+  --glass-lime: rgba(170, 255, 0, 0.08);
   
-  /* Frutiger Aero Specific Gradients */
-  --bg-aero-1: linear-gradient(135deg, #00D4FF 0%, #B19EEF 50%, #FF6B9D 100%);
-  --bg-aero-2: linear-gradient(45deg, #00FFFF 0%, #CCFF00 50%, #FF8C00 100%);
-  --bg-aero-3: radial-gradient(circle at 30% 70%, #00D4FF 0%, transparent 50%), 
-               radial-gradient(circle at 70% 30%, #B19EEF 0%, transparent 50%),
-               radial-gradient(circle at 50% 50%, #FF6B9D 0%, transparent 50%);
+  /* Dark Gradients */
+  --bg-aero-dark-1: linear-gradient(135deg, #0B1426 0%, #1A1F3A 50%, #2A2F45 100%);
+  --bg-aero-dark-2: radial-gradient(circle at 30% 70%, rgba(0, 168, 204, 0.1) 0%, transparent 50%), 
+                    radial-gradient(circle at 70% 30%, rgba(139, 126, 216, 0.1) 0%, transparent 50%),
+                    linear-gradient(135deg, #0B1426 0%, #1E2338 100%);
+  --bg-aero-dark-3: linear-gradient(45deg, rgba(0, 230, 230, 0.05) 0%, rgba(170, 255, 0, 0.05) 50%, rgba(255, 117, 0, 0.05) 100%);
   
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Fira Code', 'Courier New', monospace;
   --font-display: 'Inter', sans-serif;
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-disabled: rgba(255, 255, 255, 0.4);
   
   /* Spacing System */
   --space-xs: 0.25rem;
@@ -56,39 +65,39 @@
   
   /* Border Radius - 3DS Inspired */
   --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-2xl: 32px;
-  --radius-3xl: 48px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
   --radius-full: 9999px;
   
-  /* Shadows - Enhanced for Depth */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.25);
-  --shadow-2xl: 0 32px 128px rgba(0, 0, 0, 0.3);
+  /* Dark Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.7);
+  --shadow-2xl: 0 32px 128px rgba(0, 0, 0, 0.8);
   
-  /* Glow Effects */
-  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3);
-  --shadow-glow-purple: 0 0 20px rgba(177, 158, 239, 0.3);
-  --shadow-glow-pink: 0 0 20px rgba(255, 107, 157, 0.3);
-  --shadow-glow-cyan: 0 0 20px rgba(0, 255, 255, 0.3);
-  --shadow-glow-lime: 0 0 20px rgba(204, 255, 0, 0.3);
-  --shadow-glow-rainbow: 0 0 30px rgba(0, 212, 255, 0.2), 
-                         0 0 60px rgba(177, 158, 239, 0.2), 
-                         0 0 90px rgba(255, 107, 157, 0.2);
+  /* Dark Glow Effects */
+  --shadow-glow: 0 0 20px rgba(0, 168, 204, 0.4);
+  --shadow-glow-purple: 0 0 20px rgba(139, 126, 216, 0.4);
+  --shadow-glow-pink: 0 0 20px rgba(232, 90, 138, 0.4);
+  --shadow-glow-cyan: 0 0 20px rgba(0, 230, 230, 0.4);
+  --shadow-glow-lime: 0 0 20px rgba(170, 255, 0, 0.4);
+  --shadow-glow-rainbow: 0 0 30px rgba(0, 168, 204, 0.3), 
+                         0 0 60px rgba(139, 126, 216, 0.2), 
+                         0 0 90px rgba(232, 90, 138, 0.1);
   
-  /* Glass Effects */
-  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
-  --glass-border-strong: 2px solid rgba(255, 255, 255, 0.3);
-  --glass-backdrop: blur(20px) saturate(180%);
-  --glass-backdrop-strong: blur(40px) saturate(200%);
+  /* Enhanced Dark Glass Effects */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-border-strong: 1px solid rgba(255, 255, 255, 0.2);
+  --glass-backdrop: blur(20px) saturate(180%) brightness(1.1);
+  --glass-backdrop-strong: blur(40px) saturate(200%) brightness(1.2);
   
-  /* Transitions - Smooth and Fluid */
+  /* Transitions - Smoother for dark theme */
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -104,46 +113,25 @@
   --z-tooltip: 1000;
   --z-max: 9999;
   
-  /* Animation Durations */
-  --duration-fast: 150ms;
-  --duration-normal: 300ms;
-  --duration-slow: 500ms;
-  --duration-slower: 750ms;
-  --duration-slowest: 1000ms;
-}
-
-/* Dark theme support with enhanced colors */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --glass-white: rgba(255, 255, 255, 0.1);
-    --glass-blue: rgba(0, 212, 255, 0.15);
-    --glass-purple: rgba(177, 158, 239, 0.15);
-    --glass-pink: rgba(255, 107, 157, 0.15);
-    --glass-cyan: rgba(0, 255, 255, 0.15);
-    --glass-lime: rgba(204, 255, 0, 0.15);
-  }
+  /* Border Colors */
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.05);
+  --border-accent: rgba(0, 168, 204, 0.3);
 }
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
-/* Custom Properties for Dynamic Effects */
-:root {
-  --hue-rotate: 0deg;
-  --saturation: 100%;
-  --brightness: 100%;
-}
-
-/* Utility Classes */
-.text-gradient {
+/* Dark Theme Utility Classes */
+.text-gradient-dark {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.text-gradient-rainbow {
+.text-gradient-rainbow-dark {
   background: linear-gradient(90deg, 
     var(--color-primary) 0%, 
     var(--color-cyan) 16.66%, 
@@ -156,7 +144,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 200% 100%;
-  animation: rainbow-flow 3s linear infinite;
+  animation: rainbow-flow 4s linear infinite;
 }
 
 @keyframes rainbow-flow {
@@ -164,16 +152,48 @@
   100% { background-position: 200% 50%; }
 }
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
+.glass-effect-dark {
+  background: var(--glass-dark);
   backdrop-filter: var(--glass-backdrop);
   -webkit-backdrop-filter: var(--glass-backdrop);
   border: var(--glass-border);
 }
 
-.glass-effect-strong {
-  background: rgba(255, 255, 255, 0.15);
+.glass-effect-dark-strong {
+  background: var(--glass-dark-strong);
   backdrop-filter: var(--glass-backdrop-strong);
   -webkit-backdrop-filter: var(--glass-backdrop-strong);
   border: var(--glass-border-strong);
+}
+
+/* Dark Theme Specific Animations */
+@keyframes dark-pulse {
+  0%, 100% { 
+    opacity: 1; 
+    filter: brightness(100%); 
+  }
+  50% { 
+    opacity: 0.7; 
+    filter: brightness(120%); 
+  }
+}
+
+@keyframes dark-glow-shift {
+  0%, 100% { 
+    filter: drop-shadow(0 0 10px rgba(0, 168, 204, 0.3));
+  }
+  33% { 
+    filter: drop-shadow(0 0 15px rgba(139, 126, 216, 0.4));
+  }
+  66% { 
+    filter: drop-shadow(0 0 12px rgba(232, 90, 138, 0.3));
+  }
+}
+
+.animate-dark-pulse {
+  animation: dark-pulse 3s ease-in-out infinite;
+}
+
+.animate-dark-glow-shift {
+  animation: dark-glow-shift 4s ease-in-out infinite;
 }
