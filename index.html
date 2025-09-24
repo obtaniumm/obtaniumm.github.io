@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Liminal Space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container">
+        <div class="grid-overlay"></div>
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="orb orb-4"></div>
+        </div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SYSTEM_ONLINE</span>
+                <div class="logo-indicator"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" data-text="HOME">HOME</a></li>
+                <li><a href="#about" data-text="ABOUT">ABOUT</a></li>
+                <li><a href="#projects" data-text="PROJECTS">PROJECTS</a></li>
+                <li><a href="#contact" data-text="CONTACT">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="ascii-container">
+                <!-- ASCII Text Component will be inserted here -->
+            </div>
+            <div class="hero-content">
+                <div class="system-info">
+                    <div class="info-line">
+                        <span class="label">SYSTEM:</span>
+                        <span class="value">PORTFOLIO_V3.14</span>
+                    </div>
+                    <div class="info-line">
+                        <span class="label">STATUS:</span>
+                        <span class="value status-active">ACTIVE</span>
+                    </div>
+                    <div class="info-line">
+                        <span class="label">USER:</span>
+                        <span class="value">GUEST</span>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="glitch-text" data-text="WELCOME TO THE VOID">WELCOME</h1>
+                </div>
+                <div class="cta-buttons">
+                    <button class="glass-button primary" onclick="scrollToSection('about')">
+                        <span>EXPLORE SYSTEM</span>
+                        <div class="button-glow"></div>
+                    </button>
+                    <button class="glass-button secondary" onclick="scrollToSection('projects')">
+                        <span>VIEW PROJECTS</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">ABOUT_ME</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>hello, i'm <span class="highlight">obtanium</span>.</br>
+                        i like retro gaming and linux</br>
+                        i'm a HUGE tech nerd </p>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">PROJECTS_DIR</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card glass-panel">
+                        <div class="project-image">
+                            <div class="project-placeholder">KPack 1.8.9</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>KPack 1.8.9</h3>
+                            <p>a forge 1.8.9 modpack with optimization and qol in mind</p>
+                            <div class="project-links">
+                                <a href="https://modrinth.com/kpack-189" class="project-link">MODRINTH</a>
+                            </div>
+                        </div>
+                    </div>
+     
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">CONTACT_INIT</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="terminal-window glass-panel">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <div class="terminal-button red"></div>
+                                    <div class="terminal-button yellow"></div>
+                                    <div class="terminal-button green"></div>
+                                </div>
+                                <span class="terminal-title">contact</span>
+                            </div>
+                            <div class="terminal-content">
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span> whoami
+                                </div>
+                                <div class="terminal-line">obtanium</div>
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span> ls contact_methods/
+                                </div>
+                                <div class="terminal-line">
+                                    <a href="mailto:khtyiscooler@gmail.com" class="terminal-link">email.txt</a>
+                                </div>
+                                <div class="terminal-line">
+                                    <a href="https://github.com/obtaniumm" class="terminal-link">github.url</a>
+                                </div>
+                                <div class="terminal-line">
+                                    <a href="https://darflen.com/users/hi" class="terminal-link">darflen.url</a>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="prompt">$</span> <span class="cursor">_</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <span>SYSTEM_STATUS: OPERATIONAL</span>
+                <span class="separator">|</span>
+                <span>BUILD_VERSION: 3.14.159</span>
+                <span class="separator">|</span>
+                <span>UPTIME: ∞</span>
+            </div>
+            <div class="footer-indicator">
+                <div class="status-dot"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="ASCIIText.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
