@@ -3,171 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>obtanium.exe</title>
+    <title>obtanium</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-container">
-        <div class="grid-overlay"></div>
-        <div class="floating-orbs">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-            <div class="orb orb-4"></div>
-        </div>
-    </div>
-
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">SYSTEM_ONLINE</span>
-                <div class="logo-indicator"></div>
+    <div id="scanlines"></div>
+    <div id="noise"></div>
+    
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="glitch" data-text="obtanium">obtanium</span>
+                <span class="subtitle">闇の開発者</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" data-text="HOME">HOME</a></li>
-                <li><a href="#about" data-text="ABOUT">ABOUT</a></li>
-                <li><a href="#projects" data-text="PROJECTS">PROJECTS</a></li>
-                <li><a href="#contact" data-text="CONTACT">CONTACT</a></li>
+            <ul class="nav-links">
+                <li><a href="#home" data-jp="始まり">home</a></li>
+                <li><a href="#about" data-jp="自己">about</a></li>
+                <li><a href="#projects" data-jp="作品">projects</a></li>
+                <li><a href="#contact" data-jp="接触">contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="ascii-container">
-                <!-- ASCII Text Component will be inserted here -->
-            </div>
-            <div class="hero-content">
-                <div class="system-info">
-                    <div class="info-line">
-                        <span class="label">SYSTEM:</span>
-                        <span class="value">PORTFOLIO_V3.14</span>
+    <main class="main">
+        <section id="home" class="section hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="fuzzy-text" id="main-title">obtanium</span>
+                    </h1>
+                    <p class="hero-subtitle jp-text">真実は闇の中に隠されている</p>
+                    <p class="hero-description">:3</p>
+                    <div class="japanese-quote">
+                        <p class="quote-jp">「光は闇を理解することはできない」</p>
+                        <p class="quote-en">- the light cannot comprehend the darkness -</p>
                     </div>
-                    <div class="info-line">
-                        <span class="label">STATUS:</span>
-                        <span class="value status-active">ACTIVE</span>
-                    </div>
-                    <div class="info-line">
-                        <span class="label">USER:</span>
-                        <span class="value">GUEST</span>
-                    </div>
-                </div>
-                <div class="hero-text">
-                    <h1 class="glitch-text" data-text="WELCOME TO THE VOID">WELCOME</h1>
-                </div>
-                <div class="cta-buttons">
-                    <button class="glass-button primary" onclick="scrollToSection('about')">
-                        <span>EXPLORE SYSTEM</span>
-                        <div class="button-glow"></div>
-                    </button>
-                    <button class="glass-button secondary" onclick="scrollToSection('projects')">
-                        <span>VIEW PROJECTS</span>
-                    </button>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">ABOUT_ME</h2>
-                    <div class="section-line"></div>
-                </div>
+                <h2 class="section-title">
+                    <span class="fuzzy-text section-fuzzy">about</span>
+                    <span class="jp-subtitle">自己について</span>
+                </h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>hello, i'm <span class="highlight">obtanium</span>.</br>
-                        i like retro gaming and linux</br>
-                        i'm a HUGE tech nerd </p>
+                        <p>i'm obtanium. webdev</br>
+                        </br>retro gamer
+                        </br>arch user</p>
+                        <p class="jp-accent">私は影の中でコードを書く</p>
+                        <p>nerding out on linux</p>
+                    </div>
+                    <div class="about-philosophy">
+                        <div class="philosophy-item">
+                            <h3>コードは機械語で書かれた詩である</h3>
+                            <p>code is poetry written in the language of machines</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <h3>美は光と影の間の空間に存在する</h3>
+                            <p>beauty exists in the spaces between light and shadow</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="projects" class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">PROJECTS_DIR</h2>
-                    <div class="section-line"></div>
-                </div>
+                <h2 class="section-title">
+                    <span class="fuzzy-text section-fuzzy">projects</span>
+                    <span class="jp-subtitle">創造物</span>
+                </h2>
                 <div class="projects-grid">
-                    <div class="project-card glass-panel">
-                        <div class="project-image">
-                            <div class="project-placeholder">KPack 1.8.9</div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>kpack 1.8.9</h3>
+                            <span class="project-status">現在開発中</span>
                         </div>
-                        <div class="project-content">
-                            <h3>KPack 1.8.9</h3>
-                            <p>a forge 1.8.9 modpack with optimization and qol in mind</p>
-                            <div class="project-links">
-                                <a href="https://modrinth.com/kpack-189" class="project-link">MODRINTH</a>
-                            </div>
+                        <p class="project-description">
+                            a project born from the depths of necessity and shadow
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">forge</span>
+                            <span class="tech-tag">optifine</span>
                         </div>
                     </div>
-     
+                    
+                    <div class="project-card empty">
+                        <div class="empty-state">
+                            <div class="fuzzy-text empty-fuzzy">404</div>
+                            <p class="jp-text">まだ何もない</p>
+                            <p>more shadows await...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">CONTACT_INIT</h2>
-                    <div class="section-line"></div>
-                </div>
+                <h2 class="section-title">
+                    <span class="fuzzy-text section-fuzzy">contact</span>
+                    <span class="jp-subtitle">繋がり</span>
+                </h2>
                 <div class="contact-content">
+                    <p class="contact-intro jp-text">闇の中でも繋がることができる</p>
                     <div class="contact-info">
-                        <div class="terminal-window glass-panel">
-                            <div class="terminal-header">
-                                <div class="terminal-buttons">
-                                    <div class="terminal-button red"></div>
-                                    <div class="terminal-button yellow"></div>
-                                    <div class="terminal-button green"></div>
-                                </div>
-                                <span class="terminal-title">contact</span>
-                            </div>
-                            <div class="terminal-content">
-                                <div class="terminal-line">
-                                    <span class="prompt">$</span> whoami
-                                </div>
-                                <div class="terminal-line">obtanium</div>
-                                <div class="terminal-line">
-                                    <span class="prompt">$</span> ls contact_methods/
-                                </div>
-                                <div class="terminal-line">
-                                    <a href="mailto:khtyiscooler@gmail.com" class="terminal-link">email.txt</a>
-                                </div>
-                                <div class="terminal-line">
-                                    <a href="https://github.com/obtaniumm" class="terminal-link">github.url</a>
-                                </div>
-                                <div class="terminal-line">
-                                    <a href="https://darflen.com/users/hi" class="terminal-link">darflen.url</a>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="prompt">$</span> <span class="cursor">_</span>
-                                </div>
-                            </div>
-                        </div>
+                        <p>github: obtaniumm</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="glass-footer">
-        <div class="footer-content">
-            <div class="footer-text">
-                <span>SYSTEM_STATUS: OPERATIONAL</span>
-                <span class="separator">|</span>
-                <span>BUILD_VERSION: 3.14.159</span>
-                <span class="separator">|</span>
-                <span>UPTIME: ∞</span>
-            </div>
-            <div class="footer-indicator">
-                <div class="status-dot"></div>
-            </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="jp-text">© 2025 obtanium • 全ての影は保護されています</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="ASCIIText.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
