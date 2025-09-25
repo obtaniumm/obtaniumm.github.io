@@ -236,3 +236,98 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(section);
+    });
+    
+    // Glitch effect intensifier on scroll
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const glitchElements = document.querySelectorAll('.glitch');
+        
+        if (scrollTop > lastScrollTop) {
+            glitchElements.forEach(el => {
+                el.style.animationDuration = '0.1s';
+            });
+        } else {
+            setTimeout(() => {
+                glitchElements.forEach(el => {
+                    el.style.animationDuration = '0.5s';
+                });
+            }, 100);
+        }
+        lastScrollTop = scrollTop;
+    });
+    
+    // Random Japanese phrases that appear periodically
+    const japaneseQuotes = [
+        { jp: '影は真実を語る', en: 'shadows speak the truth' },
+        { jp: '静寂の中に答えがある', en: 'in silence lies the answer' },
+        { jp: '夜は全てを包む', en: 'night embraces all' },
+        { jp: '記憶は消えない', en: 'memories never fade' },
+        { jp: '時間は幻想である', en: 'time is an illusion' }
+    ];
+    
+    function showRandomQuote() {
+        const quote = japaneseQuotes[Math.floor(Math.random() * japaneseQuotes.length)];
+        const quoteElement = document.createElement('div');
+        
+        quoteElement.innerHTML = `
+            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 0.9rem; color: #8b0000; margin-bottom: 0.3rem;">${quote.jp}</div>
+            <div style="font-size: 0.75rem; color: #666; font-style: italic;">${quote.en}</div>
+        `;
+        
+        quoteElement.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(17, 17, 17, 0.95);
+            border: 1px solid #333;
+            padding: 1rem;
+            border-radius: 4px;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            pointer-events: none;
+        `;
+        
+        document.body.appendChild(quoteElement);
+        
+        setTimeout(() => {
+            quoteElement.style.opacity = '1';
+            quoteElement.style.transform = 'translateX(0)';
+        }, 100);
+        
+        setTimeout(() => {
+            quoteElement.style.opacity = '0';
+            quoteElement.style.transform = 'translateX(100px)';
+            
+            setTimeout(() => {
+                if (quoteElement.parentNode) {
+                    quoteElement.parentNode.removeChild(quoteElement);
+                }
+            }, 300);
+        }, 4000);
+    }
+    
+    // Show random quotes periodically
+    setInterval(showRandomQuote, 30000);
+    setTimeout(showRandomQuote, 5000);
+    
+    // Console easter egg
+    console.log('%c闇の中へようこそ', 'color: #8b0000; font-size: 20px; font-family: "Noto Sans JP", sans-serif;');
+    console.log('%cWelcome to the darkness', 'color: #666; font-size: 14px;');
+    console.log('%c> obtanium.exe initialized', 'color: #00ff41; font-family: monospace;');
