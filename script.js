@@ -17,27 +17,38 @@ class FuzzyText {
         this.animationFrameId = null;
         this.isHovering = false;
         this.isCancelled = false;
+        this.cleanup = null;
         
         this.init();
     }
     
     async init() {
+        // Wait for fonts to load
         if (document.fonts?.ready) {
-            await document.fonts.ready;
+            try {
+                await document.fonts.ready;
+            } catch (e) {
+                console.warn('Font loading issue:', e);
+            }
         }
+        
         if (this.isCancelled) return;
         
         // Create canvas
         this.canvas = document.createElement('canvas');
         this.canvas.style.display = 'block';
+        this.canvas.style.margin = '0 auto';
         this.element.innerHTML = '';
         this.element.appendChild(this.canvas);
         
-        const ctx = this.canvas.getContext('2d');
-        if (!ctx) return;
+        const ctx = this.canvas.getContext('2d', { alpha: true });
+        if (!ctx) {
+            console.error('Could not get canvas context');
+            return;
+        }
         
         const computedFontFamily = this.options.fontFamily === 'inherit' 
-            ? window.getComputedStyle(this.canvas).fontFamily || 'sans-serif' 
+            ? window.getComputedStyle(this.element).fontFamily || 'sans-serif' 
             : this.options.fontFamily;
         
         const fontSizeStr = typeof this.options.fontSize === 'number' 
@@ -50,6 +61,7 @@ class FuzzyText {
         } else {
             const temp = document.createElement('span');
             temp.style.fontSize = this.options.fontSize;
+            temp.style.visibility = 'hidden';
             document.body.appendChild(temp);
             const computedSize = window.getComputedStyle(temp).fontSize;
             numericFontSize = parseFloat(computedSize);
@@ -60,8 +72,11 @@ class FuzzyText {
         
         // Create offscreen canvas for text measurement
         const offscreen = document.createElement('canvas');
-        const offCtx = offscreen.getContext('2d');
-        if (!offCtx) return;
+        const offCtx = offscreen.getContext('2d', { alpha: true });
+        if (!offCtx) {
+            console.error('Could not get offscreen context');
+            return;
+        }
         
         offCtx.font = `${this.options.fontWeight} ${fontSizeStr} ${computedFontFamily}`;
         offCtx.textBaseline = 'alphabetic';
@@ -152,7 +167,9 @@ class FuzzyText {
         
         // Store cleanup function
         this.cleanup = () => {
-            window.cancelAnimationFrame(this.animationFrameId);
+            if (this.animationFrameId) {
+                window.cancelAnimationFrame(this.animationFrameId);
+            }
             if (this.options.enableHover && this.canvas) {
                 this.canvas.removeEventListener('mousemove', handleMouseMove);
                 this.canvas.removeEventListener('mouseleave', handleMouseLeave);
@@ -164,9 +181,6 @@ class FuzzyText {
     
     destroy() {
         this.isCancelled = true;
-        if (this.animationFrameId) {
-            window.cancelAnimationFrame(this.animationFrameId);
-        }
         if (this.cleanup) {
             this.cleanup();
         }
@@ -174,7 +188,7 @@ class FuzzyText {
 }
 
 // Initialize fuzzy text elements
-document.addEventListener('DOMContentLoaded', function() {
+function initializeFuzzyText() {
     // Initialize main title
     const mainTitle = document.getElementById('main-title');
     if (mainTitle) {
@@ -191,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize section titles
     const sectionTitles = document.querySelectorAll('.section-fuzzy');
     sectionTitles.forEach(title => {
-        const text = title.textContent;
+        const text = title.textContent.trim();
         new FuzzyText(title, {
             fontSize: 'clamp(2rem, 6vw, 4rem)',
             fontWeight: 700,
@@ -214,7 +228,17 @@ document.addEventListener('DOMContentLoaded', function() {
             text: '404'
         });
     }
-    
+}
+
+// Wait for DOM and fonts to be ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeFuzzyText);
+} else {
+    initializeFuzzyText();
+}
+
+// Other event listeners
+document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -330,4 +354,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Console easter egg
     console.log('%c闇の中へようこそ', 'color: #8b0000; font-size: 20px; font-family: "Noto Sans JP", sans-serif;');
     console.log('%cWelcome to the darkness', 'color: #666; font-size: 14px;');
-    console.log('%c> obtanium.exe initialized', 'color: #00ff41; font-family: monospace;');
+    console.log('%c>initialized', 'color: #00ff41; font-family: monospace;');
+});
