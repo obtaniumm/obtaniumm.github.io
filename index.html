@@ -3,143 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>obtanium</title>
+    <title>OBTANIUM</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;900&family=JetBrains+Mono:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-pattern"></div>
-    <div class="dots-pattern"></div>
+    <div class="grid-overlay"></div>
 
     <nav class="nav">
-        <div class="nav-content">
-            <div class="logo">
-                <span class="logo-text">obtanium</span>
-                <span class="subtitle">闇の開発者</span>
+        <div class="nav-container">
+            <div class="logo">OBTANIUM</div>
+            <div class="nav-links">
+                <a href="#work">WORK</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link" data-jp="始まり">home</a></li>
-                <li><a href="#about" class="nav-link" data-jp="自己">about</a></li>
-                <li><a href="#projects" class="nav-link" data-jp="作品">projects</a></li>
-                <li><a href="#contact" class="nav-link" data-jp="接触">contact</a></li>
-            </ul>
         </div>
     </nav>
 
-    <main class="main">
-        <section id="home" class="section hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="fuzzy-text" id="main-title">obtanium</span>
-                    </h1>
-                    <p class="hero-subtitle jp-text">真実は闇の中に隠されている</p>
-                    <p class="hero-description">:3</p>
-                    <div class="light-box">
-                        <p class="quote-jp">「光は闇を理解することはできない」</p>
-                        <p class="quote-en">- the light cannot comprehend the darkness -</p>
-                    </div>
-                </div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">BRUTALIST<br>WEB<br>DEVELOPER</h1>
+                <div class="hero-subtitle">FUNCTION OVER FORM / RAW STRUCTURE / NO DECORATION</div>
             </div>
         </section>
 
         <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="section-text">about</span>
-                    <span class="jp-subtitle">自己について</span>
-                </h2>
-                <div class="about-content">
-                    <div class="about-block">
-                        <div class="about-text">
-                            <p>i'm obtanium.</p>
-                            <p>webdev</p>
-                            <p>retro gamer</p>
-                            <p>arch user</p>
-                            <p class="mt">nerding out on linux</p>
-                        </div>
+            <div class="section-header">
+                <h2>ABOUT</h2>
+            </div>
+            <div class="content-grid">
+                <div class="info-block">
+                    <div class="block-title">IDENTITY</div>
+                    <div class="block-content">
+                        <p>OBTANIUM</p>
+                        <p>WEB DEVELOPER</p>
+                        <p>ARCH USER</p>
+                        <p>RETRO GAMER</p>
                     </div>
-                    <div class="philosophy-grid">
-                        <div class="philosophy-block">
-                            <h3>コードは機械語で書かれた詩である</h3>
-                            <p>code is poetry written in the language of machines</p>
-                        </div>
-                        <div class="philosophy-block">
-                            <h3>美は光と影の間の空間に存在する</h3>
-                            <p>beauty exists in the spaces between light and shadow</p>
-                        </div>
+                </div>
+                <div class="info-block">
+                    <div class="block-title">PHILOSOPHY</div>
+                    <div class="block-content">
+                        <p>CODE IS STRUCTURE</p>
+                        <p>SIMPLICITY IS COMPLEXITY RESOLVED</p>
+                        <p>REMOVE THE UNNECESSARY</p>
+                        <p>EXPOSE THE FOUNDATION</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="section-text">projects</span>
-                    <span class="jp-subtitle">創造物</span>
-                </h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>kpack 1.8.9</h3>
-                            <span class="project-status">現在開発中</span>
-                        </div>
-                        <p class="project-description">
-                            a minecraft 1.8.9 modpack with qol and optimiations in mind
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">forge</span>
-                            <span class="tech-tag">optifine</span>
-                        </div>
+        <section id="work" class="section">
+            <div class="section-header">
+                <h2>WORK</h2>
+            </div>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div class="work-header">
+                        <div class="work-title">KPACK 1.8.9</div>
+                        <div class="work-status">IN DEVELOPMENT</div>
                     </div>
+                    <div class="work-desc">
+                        MINECRAFT 1.8.9 MODPACK<br>
+                        QUALITY OF LIFE IMPROVEMENTS<br>
+                        OPTIMIZATIONS
+                    </div>
+                    <div class="work-tags">
+                        <span>FORGE</span>
+                        <span>OPTIFINE</span>
+                    </div>
+                </div>
 
-                    <div class="project-card empty">
-                        <div class="empty-state">
-                            <div class="empty-text">404</div>
-                            <p class="jp-text">まだ何もない</p>
-                            <p>more shadows await...</p>
-                        </div>
+                <div class="work-item empty">
+                    <div class="work-header">
+                        <div class="work-title">MORE COMING</div>
+                        <div class="work-status">SOON</div>
+                    </div>
+                    <div class="work-desc">
+                        PROJECTS IN PROGRESS<br>
+                        CHECK BACK LATER
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="section-text">contact</span>
-                    <span class="jp-subtitle">繋がり</span>
-                </h2>
-                <div class="contact-content">
-                    <p class="contact-intro jp-text">闇の中でも繋がることができる</p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="contact-label">github:</span>
-                            <span class="contact-value">@obtaniumm</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">email:</span>
-                            <span class="contact-value">khtyiscooler@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">darflen:</span>
-                            <span class="contact-value">@hi</span>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <h2>CONTACT</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">GITHUB</div>
+                    <div class="contact-value">@OBTANIUMM</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">EMAIL</div>
+                    <div class="contact-value">KHTYISCOOLER@GMAIL.COM</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">DARFLEN</div>
+                    <div class="contact-value">@HI</div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p class="jp-text">© 2025 obtanium • 全ての影は保護されています</p>
+        <div class="footer-content">
+            <div>© 2025 OBTANIUM</div>
+            <div>ALL RIGHTS RESERVED</div>
         </div>
     </footer>
 
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
