@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;900&family=JetBrains+Mono:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="scanlines"></div>
-    <div id="noise"></div>
-    
+    <div class="grid-pattern"></div>
+    <div class="dots-pattern"></div>
+
     <nav class="nav">
         <div class="nav-content">
             <div class="logo">
-                <span class="glitch" data-text="obtanium">obtanium</span>
+                <span class="logo-text">obtanium</span>
                 <span class="subtitle">闇の開発者</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home" data-jp="始まり">home</a></li>
-                <li><a href="#about" data-jp="自己">about</a></li>
-                <li><a href="#projects" data-jp="作品">projects</a></li>
-                <li><a href="#contact" data-jp="接触">contact</a></li>
+                <li><a href="#home" class="nav-link" data-jp="始まり">home</a></li>
+                <li><a href="#about" class="nav-link" data-jp="自己">about</a></li>
+                <li><a href="#projects" class="nav-link" data-jp="作品">projects</a></li>
+                <li><a href="#contact" class="nav-link" data-jp="接触">contact</a></li>
             </ul>
         </div>
     </nav>
@@ -37,7 +37,7 @@
                     </h1>
                     <p class="hero-subtitle jp-text">真実は闇の中に隠されている</p>
                     <p class="hero-description">:3</p>
-                    <div class="japanese-quote">
+                    <div class="light-box">
                         <p class="quote-jp">「光は闇を理解することはできない」</p>
                         <p class="quote-en">- the light cannot comprehend the darkness -</p>
                     </div>
@@ -48,23 +48,25 @@
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="fuzzy-text section-fuzzy">about</span>
+                    <span class="section-text">about</span>
                     <span class="jp-subtitle">自己について</span>
                 </h2>
                 <div class="about-content">
-                    <div class="about-text">
-                        <p>i'm obtanium.</br>
-                        </br>webdev
-                        </br>retro gamer
-                        </br>arch user</p>
-                        <p>nerding out on linux</p>
+                    <div class="about-block">
+                        <div class="about-text">
+                            <p>i'm obtanium.</p>
+                            <p>webdev</p>
+                            <p>retro gamer</p>
+                            <p>arch user</p>
+                            <p class="mt">nerding out on linux</p>
+                        </div>
                     </div>
-                    <div class="about-philosophy">
-                        <div class="philosophy-item">
+                    <div class="philosophy-grid">
+                        <div class="philosophy-block">
                             <h3>コードは機械語で書かれた詩である</h3>
                             <p>code is poetry written in the language of machines</p>
                         </div>
-                        <div class="philosophy-item">
+                        <div class="philosophy-block">
                             <h3>美は光と影の間の空間に存在する</h3>
                             <p>beauty exists in the spaces between light and shadow</p>
                         </div>
@@ -76,7 +78,7 @@
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="fuzzy-text section-fuzzy">projects</span>
+                    <span class="section-text">projects</span>
                     <span class="jp-subtitle">創造物</span>
                 </h2>
                 <div class="projects-grid">
@@ -93,10 +95,10 @@
                             <span class="tech-tag">optifine</span>
                         </div>
                     </div>
-                    
+
                     <div class="project-card empty">
                         <div class="empty-state">
-                            <div class="fuzzy-text empty-fuzzy">404</div>
+                            <div class="empty-text">404</div>
                             <p class="jp-text">まだ何もない</p>
                             <p>more shadows await...</p>
                         </div>
@@ -108,15 +110,24 @@
         <section id="contact" class="section">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="fuzzy-text section-fuzzy">contact</span>
+                    <span class="section-text">contact</span>
                     <span class="jp-subtitle">繋がり</span>
                 </h2>
                 <div class="contact-content">
                     <p class="contact-intro jp-text">闇の中でも繋がることができる</p>
                     <div class="contact-info">
-                        <p>github: @obtaniumm</p>
-                        <p>email: khtyiscooler@gmail.com</p>
-                        <p>darflen: @hi</p>
+                        <div class="contact-item">
+                            <span class="contact-label">github:</span>
+                            <span class="contact-value">@obtaniumm</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">email:</span>
+                            <span class="contact-value">khtyiscooler@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">darflen:</span>
+                            <span class="contact-value">@hi</span>
+                        </div>
                     </div>
                 </div>
             </div>
