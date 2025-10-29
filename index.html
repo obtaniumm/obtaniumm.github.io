@@ -3,119 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBTANIUM</title>
+    <title>obtanium</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-overlay"></div>
+    <div class="grid"></div>
 
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="logo">OBTANIUM</div>
-            <div class="nav-links">
-                <a href="#work">WORK</a>
-                <a href="#about">ABOUT</a>
-                <a href="#contact">CONTACT</a>
-            </div>
+    <header class="header">
+        <div class="container">
+            <h1 class="name">obtanium</h1>
         </div>
-    </nav>
+    </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">BRUTALIST<br>WEB<br>DEVELOPER</h1>
-                <div class="hero-subtitle">FUNCTION OVER FORM / RAW STRUCTURE / NO DECORATION</div>
+    <main class="main">
+        <section class="intro">
+            <div class="container">
+                <p class="bio">webdev / retro gamer / arch user</p>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <div class="section-header">
-                <h2>ABOUT</h2>
-            </div>
-            <div class="content-grid">
-                <div class="info-block">
-                    <div class="block-title">IDENTITY</div>
-                    <div class="block-content">
-                        <p>OBTANIUM</p>
-                        <p>WEB DEVELOPER</p>
-                        <p>ARCH USER</p>
-                        <p>RETRO GAMER</p>
-                    </div>
-                </div>
-                <div class="info-block">
-                    <div class="block-title">PHILOSOPHY</div>
-                    <div class="block-content">
-                        <p>CODE IS STRUCTURE</p>
-                        <p>SIMPLICITY IS COMPLEXITY RESOLVED</p>
-                        <p>REMOVE THE UNNECESSARY</p>
-                        <p>EXPOSE THE FOUNDATION</p>
-                    </div>
+        <section class="projects">
+            <div class="container">
+                <h2 class="section-title">projects</h2>
+
+                <div class="project-list">
+                    <article class="project">
+                        <div class="project-header">
+                            <h3 class="project-name">kpack 1.8.9</h3>
+                            <span class="project-status">in development</span>
+                        </div>
+                        <p class="project-desc">minecraft 1.8.9 modpack focused on quality of life improvements and optimizations</p>
+                        <div class="project-tech">
+                            <span>forge</span>
+                            <span>optifine</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="work" class="section">
-            <div class="section-header">
-                <h2>WORK</h2>
-            </div>
-            <div class="work-grid">
-                <div class="work-item">
-                    <div class="work-header">
-                        <div class="work-title">KPACK 1.8.9</div>
-                        <div class="work-status">IN DEVELOPMENT</div>
-                    </div>
-                    <div class="work-desc">
-                        MINECRAFT 1.8.9 MODPACK<br>
-                        QUALITY OF LIFE IMPROVEMENTS<br>
-                        OPTIMIZATIONS
-                    </div>
-                    <div class="work-tags">
-                        <span>FORGE</span>
-                        <span>OPTIFINE</span>
-                    </div>
-                </div>
+        <section class="contact">
+            <div class="container">
+                <h2 class="section-title">contact</h2>
 
-                <div class="work-item empty">
-                    <div class="work-header">
-                        <div class="work-title">MORE COMING</div>
-                        <div class="work-status">SOON</div>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <span class="contact-label">github</span>
+                        <a href="https://github.com/obtaniumm" class="contact-link">@obtaniumm</a>
                     </div>
-                    <div class="work-desc">
-                        PROJECTS IN PROGRESS<br>
-                        CHECK BACK LATER
+                    <div class="contact-item">
+                        <span class="contact-label">email</span>
+                        <a href="mailto:khtyiscooler@gmail.com" class="contact-link">khtyiscooler@gmail.com</a>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="section-header">
-                <h2>CONTACT</h2>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-label">GITHUB</div>
-                    <div class="contact-value">@OBTANIUMM</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-label">EMAIL</div>
-                    <div class="contact-value">KHTYISCOOLER@GMAIL.COM</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-label">DARFLEN</div>
-                    <div class="contact-value">@HI</div>
+                    <div class="contact-item">
+                        <span class="contact-label">darflen</span>
+                        <span class="contact-link">@hi</span>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div>© 2025 OBTANIUM</div>
-            <div>ALL RIGHTS RESERVED</div>
+        <div class="container">
+            <p>© 2025 obtanium</p>
         </div>
     </footer>
 
